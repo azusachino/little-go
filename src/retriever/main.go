@@ -45,7 +45,7 @@ func main() {
 	var rr Retriever
 	// switch (type)
 	inspect(rr)
-	var r = mock.Retriever{Contents: "this is test message"}
+	var r = mock.Retriever{Contents: "this is main message"}
 	var r2 = real.Retriever{}
 	var r3 = real.Retriever{
 		UserAgent: "Mozilla/5.0",
