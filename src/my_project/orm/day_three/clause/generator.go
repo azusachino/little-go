@@ -16,7 +16,7 @@ func init() {
 	generators[SELECT] = _select
 	generators[LIMIT] = _limit
 	generators[WHERE] = _where
-	generators[ORDERBY] = _orderBy
+	generators[ORDER_BY] = _orderBy
 }
 
 func generateBindVars(num int) string {

@@ -15,7 +15,7 @@ const (
 	SELECT
 	LIMIT
 	WHERE
-	ORDERBY
+	ORDER_BY
 )
 
 func (c *Clause) Set(name Type, vars ...interface{}) {

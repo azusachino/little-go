@@ -1,15 +1,17 @@
 package scheduler
 
-import "learn_project/crawler/engine"
+import "learn_project/crawler/types"
 
-type SimpleScheduler struct {
-	workerChan chan engine.Request
+type Scheduler interface {
+	Submit(types.Request)
+
+	WorkerChan() chan types.Request
+
+	ReadyNotifier
+
+	Run()
 }
 
-func (s SimpleScheduler) ConfigureWorkerChan(chan engine.Request) {
-
-}
-
-func (s SimpleScheduler) Submit(request engine.Request) {
-	s.workerChan <- request
+type ReadyNotifier interface {
+	WorkerReady(chan types.Request)
 }
