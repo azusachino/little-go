@@ -2,6 +2,9 @@
 
 ## 学习golang的repo
 
+- 配置path => C:\Go\bin
+- GoPath => C:\Users\az\Go
+
 ### 变量类型 条件语句
 
 十进制转二进制  
@@ -29,3 +32,7 @@
 - recover() interface{} => allows a program to manage behavior of a panicking goroutine
 - print(args ...Type) => 打印
 - println(args ...Type) => 换行打印
+
+### 切换proxy
+
+`go env -w GOPROXY=https://goproxy.cn,direct`

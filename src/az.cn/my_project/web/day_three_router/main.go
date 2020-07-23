@@ -19,7 +19,7 @@ hello geektutu, you're at /hello/geektutu
 
 (4)
 $ curl "http://localhost:9999/assets/css/geektutu.css"
-{"filepath":"css/geektutu.css"}
+{"filepath":"css/main.css"}
 
 (5)
 $ curl "http://localhost:9999/xxx"

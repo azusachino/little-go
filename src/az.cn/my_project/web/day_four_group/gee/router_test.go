@@ -47,10 +47,10 @@ func TestGetRoute(t *testing.T) {
 
 func TestGetRoute2(t *testing.T) {
 	r := newTestRouter()
-	n1, ps1 := r.getRoute("GET", "/assets/file1.txt")
-	ok1 := n1.pattern == "/assets/*filepath" && ps1["filepath"] == "file1.txt"
+	n1, ps1 := r.getRoute("GET", "/assets/file.txt")
+	ok1 := n1.pattern == "/assets/*filepath" && ps1["filepath"] == "file.txt"
 	if !ok1 {
-		t.Fatal("pattern shoule be /assets/*filepath & filepath shoule be file1.txt")
+		t.Fatal("pattern shoule be /assets/*filepath & filepath shoule be file.txt")
 	}
 
 	n2, ps2 := r.getRoute("GET", "/assets/css/test.css")
