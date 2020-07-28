@@ -36,3 +36,27 @@
 ### 切换proxy
 
 `go env -w GOPROXY=https://goproxy.cn,direct`
+
+### 知识点
+
+struct最有用的特征之一是能够制定字段名映射
+
+```go
+type User struct {
+  Id        int       `json:"id"`
+  Name      string    `json:"name"`
+  Bio       string    `json:"about,omitempty"`
+  Active    bool      `json:"active"`
+  Admin     bool      `json:"-"`
+  CreatedAt time.Time `json:"created_at"`
+}
+
+```
+
+强制转型
+
+```go
+func (dv DefaultValidator) Validate(val interface{}) (bool, error) {
+	return val.(bool), nil // val.(type) 
+}
+```
