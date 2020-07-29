@@ -1,4 +1,4 @@
-module az.cn/learn_iris
+module learn_iris
 
 go 1.14
 
