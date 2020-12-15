@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println(Eval(1, 2, "-"))
 	Aa()
 	fmt.Println(Convert2Bin(5))    // 101
 	fmt.Println(Convert2Bin(13))   // 1101
