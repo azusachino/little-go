@@ -24,8 +24,8 @@ Traceback:
         /Users/7days-golang/day7-panic-recover/gee/context.go:41
         /Users/7days-golang/day7-panic-recover/gee/router.go:99
         /Users/7days-golang/day7-panic-recover/gee/gee.go:130
-        /usr/local/Cellar/go/1.12.5/libexec/src/net/http/server.go:2775
-        /usr/local/Cellar/go/1.12.5/libexec/src/net/http/server.go:1879
+        /usr/local/Cellar/go/1.12.5/libexec/src/net/http/server1.go:2775
+        /usr/local/Cellar/go/1.12.5/libexec/src/net/http/server1.go:1879
         /usr/local/Cellar/go/1.12.5/libexec/src/runtime/asm_amd64.s:1338
 
 2020/01/09 01:00:32 [500] /panic in 395.846µs
