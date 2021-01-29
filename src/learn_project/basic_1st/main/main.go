@@ -12,7 +12,7 @@ func main() {
 	fmt.Println(Convert2Bin(13))   // 1101
 	fmt.Println(Convert2Bin(2315)) // 100100001011
 	fmt.Println(Convert2Bin(0))    // 0
-	PrintFile("README.md")
+	PrintFile("main.go")
 	//fmt.Println(apply(div, 5, 6))
 	fmt.Println(Apply(func(a, b int) int {
 		return a + b
