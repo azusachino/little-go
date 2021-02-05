@@ -3,3 +3,5 @@
 pkg/
 
 # file
+/modules.txt
+vendor/
