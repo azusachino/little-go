@@ -12,6 +12,14 @@
 - 反射
 - 语言交互性
 
+## chan
+
+```sh
+chan  :bidirectional channel (Both read and write)
+chan <-  :only writing to channel
+<- chan  :only reading from channel (input channel)    
+```
+
 ## DEMO
 
 ```go
@@ -38,7 +46,7 @@ type golang interface{}
 
 // 由main函数作为程序入口点启动
 func main() {
-    Println("Hello World!" + name)
+	Println("Hello World!" + name)
 }
 ```
 
