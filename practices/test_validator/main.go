@@ -90,11 +90,11 @@ func getValidatorFromTag(tag string) Validator {
 	switch args[0] {
 	case "number":
 		validator := NumberValidator{}
-		_, _ = fmt.Sscanf(strings.Join(args[1:], ","), "min=%d,max=%d", &validator.Min, &validator.Max)
+		_, _ = fmt.Sscanf(strings.Join(args[1:], ","), "min=%d,max=%d", validator.Min, validator.Max)
 		return validator
 	case "string":
 		validator := StringValidator{}
-		_, _ = fmt.Sscanf(strings.Join(args[1:], ","), "min=%d,max=%d", &validator.Min, &validator.Max)
+		_, _ = fmt.Sscanf(strings.Join(args[1:], ","), "min=%d,max=%d", validator.Min, validator.Max)
 		return validator
 	case "email":
 		return EmailValidator{}

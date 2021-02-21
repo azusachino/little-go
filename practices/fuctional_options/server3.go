@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-//使用一个builder类来做包装
+// 使用一个builder类来做包装
 type ServerBuilder struct {
 	Server
 }
@@ -13,7 +13,7 @@ type ServerBuilder struct {
 func (sb *ServerBuilder) Create(addr string, port int) *ServerBuilder {
 	sb.Server.Addr = addr
 	sb.Server.Port = port
-	//其它代码设置其它成员的默认值
+	// 其它代码设置其它成员的默认值
 	return sb
 }
 
@@ -41,12 +41,12 @@ func (sb *ServerBuilder) Build() Server {
 	return sb.Server
 }
 
-func a() {
-	//sb := ServerBuilder{}
-	//server, err := sb.Create("127.0.0.1", 8080).
-	//	WithProtocol("udp").
-	//	WithMaxConn(1024).
-	//	WithTimeOut(30).
-	//	Build()
-	//print(server)
+func init() {
+	sb := ServerBuilder{}
+	server := sb.Create("127.0.0.1", 8080).
+		WithProtocol("udp").
+		WithMaxConn(1024).
+		WithTimeOut(30).
+		Build()
+	print(server)
 }
