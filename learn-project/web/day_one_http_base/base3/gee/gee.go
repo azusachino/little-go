@@ -3,11 +3,11 @@ package gee
 import (
 	"fmt"
 	"log"
-	"net/http"
+	. "net/http"
 )
 
 // HandlerFunc defines the request handler used by gee
-type HandlerFunc func(http.ResponseWriter, *http.Request)
+// type HandlerFunc func(http.ResponseWriter, *http.Request)
 
 // Engine implement the interface of ServeHTTP
 type Engine struct {
@@ -37,10 +37,11 @@ func (engine *Engine) POST(pattern string, handler HandlerFunc) {
 
 // Run defines the method to start a http server
 func (engine *Engine) Run(addr string) (err error) {
-	return http.ListenAndServe(addr, engine)
+	return ListenAndServe(addr, engine)
 }
 
-func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+// 实现 net/http 下的Handler
+func (engine *Engine) ServeHTTP(w ResponseWriter, req *Request) {
 	key := req.Method + "-" + req.URL.Path
 	if handler, ok := engine.router[key]; ok {
 		handler(w, req)
