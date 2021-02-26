@@ -1,0 +1,6 @@
+syntax = "proto3"; // 采用proto3语法
+
+package main;
+message String {
+  string value = 1;
+}
