@@ -33,6 +33,7 @@ func b() {
 	select {
 	case v := <-in:
 		fmt.Println(v)
+		// 每次请求(调用)
 	case <-time.After(time.Second):
 		return // 已超时
 	}
@@ -43,6 +44,15 @@ func b() {
 		fmt.Println(v)
 	default:
 		// 没有数据的情况
+	}
+
+	// 所有请求的总时长
+	c := time.After(time.Second * 10)
+	select {
+	case v := <-in:
+		fmt.Println(v)
+	case <-c:
+		fmt.Println("It's Over")
 	}
 
 	// 通过空的select组织main函数退出
