@@ -102,7 +102,9 @@ func static(result []*onceReqReport) (failCount uint, time95, avg float64) {
 
 	// 算95分位
 	idx := math.Floor(float64(len(result)) * 0.95)
-	time95 = elapseSet[int(idx)]
+	if len(elapseSet) > 0 {
+		time95 = elapseSet[int(idx)]
+	}
 	// 算平均值
 	avg = sum / float64(len(result))
 
