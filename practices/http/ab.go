@@ -10,22 +10,30 @@ import (
 	"time"
 )
 
-var url string
-var m string
-
-var c uint
-var n uint
+var (
+	url string // url
+	m   string // method请求方法
+	c   uint   // 并发量
+	n   uint   // 请求总量
+	H   string // Header
+	b   string // Body
+)
 
 // init all flag values
 func init() {
+	flag.String("h", ``, "使用助手")
 	flag.StringVar(&url, "url", "http://example.com", "地址")
 	flag.StringVar(&m, "m", "GET", "请求方法")
 	flag.UintVar(&c, "c", 10, "并发量")
 	flag.UintVar(&n, "n", 10, "总请求量")
-	flag.Parse()
+	flag.StringVar(&H, "H", `{"Content-Type": "application/json"}`, "json格式的Header")
+	flag.StringVar(&b, "b", `{"key":"value"}`, "json格式的body")
 }
 
 func main() {
+	// 将所有flag的值绑定到对象上
+	flag.Parse()
+
 	ab := BenchWeb(url, m, n, c)
 	fmt.Println("总请求数：", ab.Requests, " 成功数：", ab.CompleteRequests)
 	fmt.Println("总耗时：", ab.TimeTotal)

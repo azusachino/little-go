@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-	var a int = 42
-	var b *int = &a
+	var a = 42
+	var b = &a
 	fmt.Println(&a, b) // 两个都是指针地址
 
 	fmt.Println(a, *b) // 两个都是数值
