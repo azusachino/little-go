@@ -11,12 +11,13 @@ import (
 )
 
 var (
-	url string // url
-	m   string // method请求方法
-	c   uint   // 并发量
-	n   uint   // 请求总量
-	H   string // Header
-	b   string // Body
+	url     string // url
+	m       string // method请求方法
+	c       uint   // 并发量
+	n       uint   // 请求总量
+	H       string // Header
+	b       string // Body
+	timeout int64  // 超时时长
 )
 
 // init all flag values
@@ -28,6 +29,7 @@ func init() {
 	flag.UintVar(&n, "n", 10, "总请求量")
 	flag.StringVar(&H, "H", `{"Content-Type": "application/json"}`, "json格式的Header")
 	flag.StringVar(&b, "b", `{"key":"value"}`, "json格式的body")
+	flag.Int64Var(&timeout, "timeout", 1000, "单个请求的超时时间")
 }
 
 func main() {
