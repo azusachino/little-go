@@ -10,25 +10,27 @@ import (
 )
 
 const (
-	// 默认goroutine池大小
+	// 默认协程池大小：1<<31 - 1
 	DefaultPoolSize = math.MaxInt32
-	// 默认清理周期
+	// 默认清理周期：1s
 	DefaultCleanInterval = time.Second
 )
 
 const (
+	// 协程池的状态
 	OPEN = iota
 	CLOSED
 )
 
 var (
-	ErrInvalidPoolSize     = errors.New("协程池size不合法")
-	ErrLackPoolFunc        = errors.New("")
-	ErrInvalidPoolExpiry   = errors.New("")
-	ErrPoolClosed          = errors.New("")
-	ErrPoolOverload        = errors.New("")
-	ErrInvalidPreAllocSize = errors.New("")
+	ErrInvalidPoolSize     = errors.New("不合法的协程池容量")
+	ErrLackPoolFunc        = errors.New("缺少自定义方法")
+	ErrInvalidPoolExpiry   = errors.New("不合法的过期协议")
+	ErrPoolClosed          = errors.New("协程池已关闭")
+	ErrPoolOverload        = errors.New("协程池过载")
+	ErrInvalidPreAllocSize = errors.New("不合法的PreAlloc容量")
 
+	// 根据CPU数量判断工作channel是否是buffered chan
 	workerChanCap = func() int {
 		// GOMAXPROCS sets the maximum number of CPUs that can be executing
 		// simultaneously and returns the previous setting.
@@ -37,10 +39,14 @@ var (
 		}
 		return 1
 	}()
-	defaultLogger      = Logger(log.New(os.Stderr, "", log.LstdFlags))
+
+	// 默认采用err日志级别
+	defaultLogger = Logger(log.New(os.Stderr, "", log.LstdFlags))
+	// 默认初始化的协程池
 	defaultAntsPool, _ = NewPool(DefaultPoolSize)
 )
 
+// 定义了logger的行为
 type Logger interface {
 	Printf(format string, args ...interface{})
 }

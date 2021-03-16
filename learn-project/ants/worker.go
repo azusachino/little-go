@@ -7,8 +7,8 @@ import (
 
 // 类似于Java的Runnable
 type goWorker struct {
-	pool        *Pool
-	task        chan func()
+	pool        *Pool       // 所属协程池
+	task        chan func() // 实际运行的方法
 	recycleTime time.Time
 }
 
@@ -21,7 +21,7 @@ func (w *goWorker) run() {
 		defer func() {
 			// count - 1
 			w.pool.decreaseRunning()
-			// adding to cache for revert
+			// 放回snyc.Pool等待下次retrieveGoWorker
 			w.pool.workerCache.Put(w)
 			if p := recover(); p != nil {
 				if ph := w.pool.options.PanicHandler; ph != nil {

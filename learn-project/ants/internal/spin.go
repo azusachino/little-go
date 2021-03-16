@@ -6,6 +6,7 @@ import (
 	"sync/atomic"
 )
 
+// 简单（抢占）锁实现
 type spinLock uint32
 
 func (sl *spinLock) Lock() {

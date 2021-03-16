@@ -2,8 +2,10 @@ package ants
 
 import "time"
 
+// 通过Option装饰Options对象 => Functional Options的应用
 type Option func(opts *Options)
 
+// 实际调用方法
 func loadOptions(options ...Option) *Options {
 	opts := new(Options)
 	for _, o := range options {
@@ -13,12 +15,12 @@ func loadOptions(options ...Option) *Options {
 }
 
 type Options struct {
-	ExpiryDuration   time.Duration
-	PreAlloc         bool
-	MaxBlockingTasks int
-	NonBlocking      bool
-	PanicHandler     func(interface{})
-	Logger           Logger
+	ExpiryDuration   time.Duration     // 定义了多久清理一次过期的协程
+	PreAlloc         bool              // 定义了在初始化协程池时是否要先获取所有内存
+	MaxBlockingTasks int               // 最大阻塞任务数量
+	NonBlocking      bool              // 是否非阻塞
+	PanicHandler     func(interface{}) // 异常处理器
+	Logger           Logger            // 日志插件
 }
 
 // WithOptions accepts the whole options config.

@@ -8,42 +8,53 @@ import (
 )
 
 type Pool struct {
-	capacity    int32 // 存储容量的地址
-	running     int32 // 存储运行中协程数量的地址
-	workers     workerArray
-	state       int32 // 存储协程池状态的地址
-	lock        sync.Locker
-	cond        *sync.Cond
-	workerCache sync.Pool
-	blockingNum int
-	options     *Options
+	capacity    int32       // 存储容量的地址
+	running     int32       // 存储运行中协程数量的地址
+	workers     workerArray // 任务池
+	state       int32       // 存储协程池状态的地址
+	lock        sync.Locker // 协程池锁
+	cond        *sync.Cond  // Cond => 达到某种条件，Signal所有阻塞协程
+	workerCache sync.Pool   // help func:retrieveWorker
+	blockingNum int         // pool.Submit之后阻塞的任务数量
+	options     *Options    // 协程池配置
 }
 
+// 定期清除过期任务
 func (p *Pool) purgePeriodically() {
+
+	// 定时器
 	heartBeat := time.NewTicker(p.options.ExpiryDuration)
+
 	defer heartBeat.Stop()
 
 	for range heartBeat.C {
+		// 直到协程池CLOSED为止
 		if atomic.LoadInt32(&p.state) == CLOSED {
 			break
 		}
+		// 获取已超时任务（线程安全）
 		p.lock.Lock()
 		expiredWorkers := p.workers.retrieveExpiry(p.options.ExpiryDuration)
 		p.lock.Unlock()
 
+		// 直接清除
 		for i := range expiredWorkers {
-			expiredWorkers[i].task = nil
+			expiredWorkers[i].task = nil // help GC
 			expiredWorkers[i] = nil
 		}
 
+		// 目前没有任何正在运行的任务，唤醒那些阻塞在 p.cond.Wait() 的任务
 		if p.Running() == 0 {
 			p.cond.Broadcast()
 		}
 	}
 }
 
+// 创建新的协程池
 func NewPool(size int, options ...Option) (*Pool, error) {
 	opts := loadOptions(options...)
+
+	// 不限制容量
 	if size <= 0 {
 		size = -1
 	}
@@ -63,12 +74,14 @@ func NewPool(size int, options ...Option) (*Pool, error) {
 		lock:     internal.NewSpinLock(),
 		options:  opts,
 	}
+	// 采用标准库中的sync.Pool装载goWorker
 	p.workerCache.New = func() interface{} {
 		return &goWorker{
 			pool: p,
 			task: make(chan func(), workerChanCap),
 		}
 	}
+	// 如果定义了PreAlloc，采用环形队列
 	if p.options.PreAlloc {
 		if size == -1 {
 			return nil, ErrInvalidPreAllocSize
@@ -86,6 +99,7 @@ func NewPool(size int, options ...Option) (*Pool, error) {
 	return p, nil
 }
 
+// 向池提交任务
 func (p *Pool) Submit(task func()) error {
 	if atomic.LoadInt32(&p.state) == CLOSED {
 		return ErrPoolClosed
@@ -138,7 +152,9 @@ func (p *Pool) decreaseRunning() {
 	atomic.AddInt32(&p.running, -1)
 }
 
+// 获取一个可用的goWorker
 func (p *Pool) retrieveWorker() (w *goWorker) {
+	// 获取goWorker并执行任务
 	spawnWorker := func() {
 		w = p.workerCache.Get().(*goWorker)
 		w.run()
@@ -170,7 +186,9 @@ func (p *Pool) retrieveWorker() (w *goWorker) {
 			return
 		}
 
+		// 从workArray中获取一个goWorker
 		w = p.workers.detach()
+		// 重试
 		if w == nil {
 			goto ReEntry
 		}

@@ -7,7 +7,7 @@ import (
 
 var (
 	errQueueIsFull     = errors.New("队列已满")
-	errQueueIsReleased = errors.New("队列未初始化")
+	errQueueIsReleased = errors.New("队列已释放")
 )
 
 type workerArray interface {
