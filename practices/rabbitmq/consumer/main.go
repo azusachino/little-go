@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/little-go/practices/rabbitmq"
 	"github.com/streadway/amqp"
 	"log"
 )
@@ -12,7 +13,7 @@ func failOnError(err error, msg string) {
 }
 
 func main() {
-	conn, err := amqp.Dial("amqp://admin:admin@180.76.169.35:5672")
+	conn, err := amqp.Dial("amqp://admin:admin@" + rabbitmq.IP + ":5672")
 	failOnError(err, "Failed to connect to RabbitMQ")
 	defer conn.Close()
 
@@ -23,7 +24,7 @@ func main() {
 	q, err := ch.QueueDeclare(
 		"hello", // name
 		false,   // durable
-		false,   // delete when unused
+		true,    // delete when unused
 		false,   // exclusive
 		false,   // no-wait
 		nil,     // arguments

@@ -25,12 +25,13 @@ var (
 	ErrInvalidPoolSize     = errors.New("协程池size不合法")
 	ErrLackPoolFunc        = errors.New("")
 	ErrInvalidPoolExpiry   = errors.New("")
-	ErrLackPoolFunc        = errors.New("")
 	ErrPoolClosed          = errors.New("")
 	ErrPoolOverload        = errors.New("")
 	ErrInvalidPreAllocSize = errors.New("")
 
 	workerChanCap = func() int {
+		// GOMAXPROCS sets the maximum number of CPUs that can be executing
+		// simultaneously and returns the previous setting.
 		if runtime.GOMAXPROCS(0) == 1 {
 			return 0
 		}
@@ -44,6 +45,32 @@ type Logger interface {
 	Printf(format string, args ...interface{})
 }
 
+// Submit submits a task to pool.
 func Submit(task func()) error {
-	return nil
+	return defaultAntsPool.Submit(task)
+}
+
+// Running returns the number of the currently running goroutines.
+func Running() int {
+	return defaultAntsPool.Running()
+}
+
+// Cap returns the capacity of this default pool.
+func Cap() int {
+	return defaultAntsPool.Cap()
+}
+
+// Free returns the available goroutines to work.
+func Free() int {
+	return defaultAntsPool.Free()
+}
+
+// Release Closes the default pool.
+func Release() {
+	defaultAntsPool.Release()
+}
+
+// Reboot reboots the default pool.
+func Reboot() {
+	defaultAntsPool.Reboot()
 }
