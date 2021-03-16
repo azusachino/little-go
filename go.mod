@@ -9,4 +9,5 @@ require (
 	github.com/streadway/amqp v1.0.0
 	golang.org/x/net v0.0.0-20191209160850-c0dbc17a3553
 	golang.org/x/text v0.3.2
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 )
