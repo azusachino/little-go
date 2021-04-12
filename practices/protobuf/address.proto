@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package tutorial;
+
+import "google/protobuf/timestamp.proto";
+option go_package = "github.com/protocolbuffers/protobuf/examples/go/tutorialpb";
+
+// The " = 1", " = 2" markers on each element identify the unique "tag" that field uses in the binary encoding.
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+    string number = 1;
+    PhoneType type = 2;
+  }
+
+  repeated PhoneNumber phones = 4;
+
+  google.protobuf.Timestamp last_updated = 5;
+}
+
+message AddressBook {
+  // repeated => list
+  repeated Person people = 1;
+}
+
+// install compiler
+// go install google.golang.org/protobuf/cmd/protoc-gen-go
+
+// compile
+// protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/address.proto
