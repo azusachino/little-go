@@ -34,6 +34,7 @@ func (w *goWorker) run() {
 				}
 			}
 		}()
+		// 传递整个函数(无参)
 		for f := range w.task {
 			if f == nil {
 				return

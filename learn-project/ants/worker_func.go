@@ -13,7 +13,7 @@ type goWorkerWithFunc struct {
 	pool *PoolWithFunc
 
 	// args is a job should be done.
-	args chan interface{}
+	args chan interface{} // 类似Java的Consumer
 
 	// recycleTime will be update when putting a worker back into queue.
 	recycleTime time.Time
@@ -39,6 +39,7 @@ func (w *goWorkerWithFunc) run() {
 			}
 		}()
 
+		// 传递参数
 		for args := range w.args {
 			if args == nil {
 				return

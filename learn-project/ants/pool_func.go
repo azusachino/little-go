@@ -30,7 +30,7 @@ type PoolWithFunc struct {
 	cond *sync.Cond
 
 	// poolFunc is the function for processing tasks.
-	poolFunc func(interface{})
+	poolFunc func(interface{}) // 相当于goWorker
 
 	// workerCache speeds up the obtainment of the an usable worker in function:retrieveWorker.
 	workerCache sync.Pool
@@ -130,8 +130,6 @@ func NewPoolWithFunc(size int, pf func(interface{}), options ...Option) (*PoolWi
 
 	return p, nil
 }
-
-//---------------------------------------------------------------------------
 
 // Invoke submits a task to pool.
 func (p *PoolWithFunc) Invoke(args interface{}) error {
