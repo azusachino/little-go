@@ -10,5 +10,7 @@ require (
 	github.com/streadway/amqp v1.0.0
 	golang.org/x/net v0.0.0-20200602114024-627f9648deb9
 	golang.org/x/text v0.3.2
+	google.golang.org/grpc v1.37.0
+	google.golang.org/protobuf v1.25.0
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 )
