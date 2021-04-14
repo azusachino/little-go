@@ -3,6 +3,9 @@ package main
 import (
 	"context"
 	pb "github.com/little-go/practices/grpc/helloworld/proto"
+	zipkin "github.com/openzipkin/zipkin-go"
+	zipkingrpc "github.com/openzipkin/zipkin-go/middleware/grpc"
+	httpReporter "github.com/openzipkin/zipkin-go/reporter/http"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -27,8 +30,14 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
+	reporter := httpReporter.NewReporter("http://localhost:9411")
+
+	tracer, err := zipkin.NewTracer(reporter)
+	if err != nil {
+		log.Fatalf("failed to start zipkin: %v", err)
+	}
 	// new GRPC SERVER
-	s := grpc.NewServer()
+	s := grpc.NewServer(grpc.StatsHandler(zipkingrpc.NewServerHandler(tracer)))
 	// register our service
 	pb.RegisterGreeterServer(s, new(server))
 	// listen call
