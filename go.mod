@@ -9,6 +9,8 @@ require (
 	github.com/kataras/iris/v12 v12.1.8
 	github.com/openzipkin/zipkin-go v0.2.5
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
+	github.com/spf13/cobra v1.1.3
+	github.com/spf13/viper v1.7.1
 	github.com/streadway/amqp v1.0.0
 	golang.org/x/net v0.0.0-20200602114024-627f9648deb9
 	golang.org/x/text v0.3.2

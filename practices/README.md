@@ -252,6 +252,11 @@ case string:
 case Stringer:
     return str.String()
 }
+
+var val interface{}
+func main() {
+	var valName = val.(map[string]interface{})["name"]
+}
 ```
 
 convert by using `value.(typeName)`, e.g. `str, ok := value.(string)`
