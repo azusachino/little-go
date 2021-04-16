@@ -9,7 +9,7 @@ import (
 var TestDB *sql.DB
 
 func TestMain(m *testing.M) {
-	TestDB, _ = sql.Open("sqlite3", "../main.db")
+	TestDB, _ = sql.Open("sqlite3", "../app.db")
 	code := m.Run()
 	_ = TestDB.Close()
 	os.Exit(code)
