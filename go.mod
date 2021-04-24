@@ -3,6 +3,7 @@ module github.com/little-go
 go 1.15
 
 require (
+	github.com/confluentinc/confluent-kafka-go v1.6.1
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/golang/protobuf v1.4.2
 	github.com/gorilla/mux v1.7.3

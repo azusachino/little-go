@@ -1,5 +1,7 @@
 # little-go
 
+学习[编程范式](docs/program-dogma.md)
+
 ## 特点
 
 - 自动垃圾回收
@@ -17,7 +19,7 @@
 ```sh
 chan  :bidirectional channel (Both read and write)
 chan <-  :only writing to channel
-<- chan  :only reading from channel (input channel)    
+<- chan  :only reading from channel (input channel)
 ```
 
 ## DEMO
@@ -50,9 +52,9 @@ func main() {
 }
 ```
 
-## 学习golang的repo
+## 学习 golang 的 repo
 
-- 配置path => C:\Go\bin
+- 配置 path => C:\Go\bin
 - GoPath => C:\Users\az\Go
 
 ### 变量类型 条件语句
@@ -73,23 +75,23 @@ func main() {
 
 - len(v Type) int => 获取长度
 - cap(v Type) int => 获取容量
-- make(t Type, size ...IntegerType) Type => 用于构建slice, map, or chan (only)
-- new(Type) *Type => 相当于java中的new, 构建对象
+- make(t Type, size ...IntegerType) Type => 用于构建 slice, map, or chan (only)
+- new(Type) \*Type => 相当于 java 中的 new, 构建对象
 - complex(r, i FloatType) ComplexType => 构建复数
 - real(c complexType) FloatType => 将复数转换成实数
-- close(c chan <- Type) => 关闭channel
+- close(c chan <- Type) => 关闭 channel
 - panic(v interface{}) => stops normal execution of the current goroutine
 - recover() interface{} => allows a program to manage behavior of a panicking goroutine
 - print(args ...Type) => 打印
 - println(args ...Type) => 换行打印
 
-### 切换proxy
+### 切换 proxy
 
 `go env -w GOPROXY=https://goproxy.cn,direct`
 
 ### 知识点
 
-struct最有用的特征之一是能够制定字段名映射
+struct 最有用的特征之一是能够制定字段名映射
 
 ```go
 package demo
@@ -116,6 +118,6 @@ type DefaultValidator struct {
 }
 
 func (dv DefaultValidator) Validate(val interface{}) (bool, error) {
-	return val.(bool), nil // val.(type) 
+	return val.(bool), nil // val.(type)
 }
 ```
