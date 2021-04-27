@@ -14,7 +14,7 @@ func (r *rect) perimeter() float64 {
 	return float64(2 * (r.height + r.width))
 }
 
-func main() {
+func init() {
 	r := rect{width: 10, height: 10}
 	fmt.Println(r.area(), r.perimeter())
 

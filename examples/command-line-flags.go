@@ -13,7 +13,7 @@ import (
  svar: flag
  tail: []
 */
-func main() {
+func init() {
 
 	wordPtr := flag.String("word", "foo", "a string")
 

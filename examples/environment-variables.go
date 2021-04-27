@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func main() {
+func init() {
 
 	_ = os.Setenv("FOO", "1")
 	fmt.Println("FOO:", os.Getenv("FOO"))

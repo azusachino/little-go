@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func main() {
+func init() {
 	// 固定buffer的channel
 	messages := make(chan string, 3)
 

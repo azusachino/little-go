@@ -18,7 +18,7 @@ type writeOp struct {
 	response chan bool
 }
 
-func main() {
+func init() {
 	var readOps, writeOps uint64
 
 	reads := make(chan readOp)

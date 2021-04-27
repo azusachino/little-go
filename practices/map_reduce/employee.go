@@ -45,7 +45,7 @@ func EmployeeSumIf(list []Employee, fn func(e *Employee) int) int {
 	return sum
 }
 
-func main() {
+func main3() {
 	old := EmployeeCountIf(list, func(e *Employee) bool {
 		return e.Age > 40
 	})

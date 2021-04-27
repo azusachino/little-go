@@ -13,7 +13,7 @@ import (
 // 0000-01-01 20:41:00 +0000 UTC
 // 2014-04-15T18:00:15-00:00
 // parsing time "8:41PM" as "Mon Jan _2 15:04:05 2006": ...
-func main() {
+func init() {
 	p := fmt.Println
 
 	t := time.Now()

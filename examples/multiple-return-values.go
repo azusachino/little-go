@@ -6,7 +6,7 @@ func values() (int, int) {
 	return 3, 6
 }
 
-func main() {
+func init() {
 	a, b := values()
 	fmt.Println(a, b)
 	_, c := values()

@@ -52,7 +52,7 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 	log.Printf("Recieved Request %s from %s\n", r.URL.Path, r.RemoteAddr)
 	_, _ = fmt.Fprintf(w, "Hello, World! "+r.URL.Path)
 }
-func main() {
+func _main() {
 	http.HandleFunc("/v1/hello_world", WithServerHeader_(WithAuthCookie(helloWorld)))
 	http.HandleFunc("/v2/hello_world", WithServerHeader_(WithBasicAuth(helloWorld)))
 	http.HandleFunc("/v3/hello_world", WithServerHeader_(WithBasicAuth(WithDebugLog(helloWorld))))

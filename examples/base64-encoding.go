@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func init() {
 
 	data := "abc123!?$*&()'-=@~"
 

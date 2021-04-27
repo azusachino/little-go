@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func init() {
 
 	scanner := bufio.NewScanner(os.Stdin)
 

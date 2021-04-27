@@ -17,7 +17,7 @@ func (p Plant) String() string {
 		p.Id, p.Name, p.Origin)
 }
 
-func main() {
+func init() {
 	coffee := &Plant{Id: 27, Name: "Coffee"}
 	coffee.Origin = []string{"Ethiopia", "Brazil"}
 

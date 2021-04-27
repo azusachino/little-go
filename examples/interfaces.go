@@ -28,7 +28,7 @@ func measure(g geometry) {
 	fmt.Println(g.perimeter())
 }
 
-func main() {
+func init() {
 	r := rect{1, 2}
 	c := circle{5}
 	measure(&r)

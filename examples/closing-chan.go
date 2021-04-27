@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func main() {
+func init() {
 	jobs := make(chan int, 5)
 	done := make(chan bool)
 

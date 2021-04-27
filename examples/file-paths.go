@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func main() {
+func init() {
 
 	p := filepath.Join("dir1", "dir2", "filename")
 	fmt.Println("p:", p)

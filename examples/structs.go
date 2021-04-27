@@ -14,7 +14,7 @@ func newPerson(name string) *Person {
 	return &p
 }
 
-func main() {
+func init() {
 
 	fmt.Println(Person{"Bob", 20})
 

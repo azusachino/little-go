@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func init() {
 	requests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {
 		requests <- i

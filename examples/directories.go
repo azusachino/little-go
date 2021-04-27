@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-func main() {
+func init() {
 
 	err := os.Mkdir("subdir", 0755)
 	check(err)

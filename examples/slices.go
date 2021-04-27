@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func main() {
+func init() {
 
 	s := make([]string, 3)
 	fmt.Println("empty", s)

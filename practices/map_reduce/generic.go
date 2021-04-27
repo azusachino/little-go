@@ -20,7 +20,7 @@ func Map(data interface{}, fn interface{}) []interface{} {
 	return result
 }
 
-func main() {
+func main2() {
 	square := func(x int) int {
 		return x * x
 	}

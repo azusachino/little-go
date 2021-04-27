@@ -13,7 +13,7 @@ func worker(done chan bool) {
 	done <- true
 }
 
-func main() {
+func init() {
 	done := make(chan bool, 1)
 	go worker(done)
 

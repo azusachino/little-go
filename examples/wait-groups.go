@@ -17,7 +17,7 @@ func worker__(id int, wg *sync.WaitGroup) {
 	fmt.Printf("Worker %d done\n", id)
 }
 
-func main() {
+func init() {
 	var wg sync.WaitGroup
 
 	for i := 1; i <= 5; i++ {

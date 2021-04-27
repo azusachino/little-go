@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func init() {
 
 	fmt.Print(rand.Intn(100), ",")
 	fmt.Print(rand.Intn(100))

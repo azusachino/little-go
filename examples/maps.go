@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func main() {
+func init() {
 	m := make(map[string]int)
 
 	m["k1"] = 7

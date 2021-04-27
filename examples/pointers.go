@@ -10,7 +10,7 @@ func zeroPtr(ptr *int) {
 	*ptr = 0
 }
 
-func main() {
+func init() {
 	i := 1
 	fmt.Println("initial:", i)
 

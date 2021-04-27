@@ -19,7 +19,7 @@ func main() {
 	err = producer.Produce(&kafka.Message{
 		TopicPartition: kafka.TopicPartition{
 			Topic:     &topic,
-			Partition: kafka.PartitionAny,
+			Partition: 0,
 		},
 		Value: []byte("Test kafka by golang"),
 	}, delCh)

@@ -6,7 +6,7 @@ import (
 	"os/exec"
 )
 
-func main() {
+func init() {
 
 	dateCmd := exec.Command("date")
 

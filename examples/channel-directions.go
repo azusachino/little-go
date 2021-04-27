@@ -14,7 +14,7 @@ func pong(pings <-chan string, pongs chan<- string) {
 	pongs <- msg
 }
 
-func main() {
+func init() {
 	pings := make(chan string, 1)
 	pongs := make(chan string, 1)
 	ping(pings, "passed message")

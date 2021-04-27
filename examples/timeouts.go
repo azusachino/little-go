@@ -8,7 +8,7 @@ import (
 // Timeouts are important for programs that connect to external resources or that otherwise need to bound execution time.
 // Implementing timeouts in Go is easy and elegant thanks to channels and select.
 
-func main() {
+func init() {
 	c1 := make(chan string, 1)
 	go func() {
 		time.Sleep(2 * time.Second)

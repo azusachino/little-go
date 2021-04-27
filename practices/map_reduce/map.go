@@ -39,7 +39,7 @@ func Filter(arr []int, fn func(int) bool) []int {
 	return newArray
 }
 
-func main() {
+func main1() {
 	var list = []string{"Hao", "Chen", "MegaEase"}
 	x := MapStrToStr(list, func(s string) string {
 		return strings.ToUpper(s)

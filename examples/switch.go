@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func main() {
+func init() {
 
 	i := 2
 	fmt.Print("Write ", i, " as ")
@@ -33,7 +33,7 @@ func main() {
 		case int:
 			fmt.Println("I am int")
 		default:
-			fmt.Println("Don't know type %T\n", t)
+			fmt.Println("Don't know type %n\n", t)
 
 		}
 	}

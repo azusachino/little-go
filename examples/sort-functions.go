@@ -19,7 +19,7 @@ func (s byLength) Less(i, j int) bool {
 	return len(s[i]) < len(s[j])
 }
 
-func main() {
+func init() {
 	fruits := []string{"peach", "apple", "kiwi"}
 	sort.Sort(byLength(fruits))
 	fmt.Println(fruits)

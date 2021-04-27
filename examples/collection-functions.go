@@ -54,7 +54,7 @@ func Map(vs []string, f func(string) string) []string {
 	return vsm
 }
 
-func main() {
+func init() {
 
 	var strs = []string{"peach", "apple", "pear", "plum"}
 
