@@ -1,0 +1,16 @@
+[app]
+name = "LittleGin"
+version = "1.0.0"
+author = "az"
+
+[mysql]
+host = ""
+port = ""
+username = ""
+password = ""
+
+[redis]
+host = ""
+port = ""
+password = ""
+
