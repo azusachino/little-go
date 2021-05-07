@@ -1,6 +1,8 @@
 package doc
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type swaggerInfo struct {
 	Version     string
