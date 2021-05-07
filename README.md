@@ -1,6 +1,8 @@
 # little-go
 
-use `go mod vendor` pull dependencies
+Go 是一个自动垃圾回收的编程语言，采用三色并发标记算法标记对象并回收。
+
+use `go mod vendor` pull dependencies (go mod tidy)
 
 学习[编程范式](docs/program-paradigm.md)
 

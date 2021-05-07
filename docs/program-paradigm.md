@@ -91,7 +91,7 @@ func main() {
 
 声明一个 \_ 变量（没人用），其会把一个 nil 的空指针，从 Square 转成 Shape，这样，如果没有实现完相关的接口方法，编译器就会报错：
 
-> cannot use (*Square)(nil) (type *Square) as type Shape in assignment: \*Square does not implement Shape (missing Area method)
+> cannot use (*Square)(nil) (type*Square) as type Shape in assignment: \*Square does not implement Shape (missing Area method)
 
 ```go
 var _ Shape = (*Square)(nil)
