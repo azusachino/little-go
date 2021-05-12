@@ -6,6 +6,7 @@ require (
 	github.com/Shopify/sarama v1.28.0
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/apache/rocketmq-client-go/v2 v2.1.0
+	github.com/elastic/go-elasticsearch/v7 v7.12.0
 	github.com/fasthttp-contrib/websocket v0.0.0-20160511215533-1f3b11f56072 // indirect
 	github.com/gin-gonic/gin v1.7.1
 	github.com/gocolly/colly/v2 v2.1.0
