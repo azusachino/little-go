@@ -6,14 +6,22 @@ import (
 	"log"
 	"time"
 
+	"github.com/spf13/viper"
 	clientv3 "go.etcd.io/etcd/client/v3"
 )
 
 var cli *clientv3.Client
 
 func init() {
+	// 读取配置文件
+	viper.AddConfigPath(".")
+	viper.SetConfigName("app")
+	viper.SetConfigType("toml")
+	viper.ReadInConfig()
+
+	etcdCluster := viper.GetStringSlice("etcd.cluster")
 	cli, _ = clientv3.New(clientv3.Config{
-		Endpoints:   []string{"104.224.188.126:2379", "64.64.224.190:2379"},
+		Endpoints:   etcdCluster,
 		DialTimeout: 5 * time.Second,
 	})
 }
@@ -22,13 +30,9 @@ func main() {
 	ctx, cancel := context.WithTimeout(context.TODO(), time.Second*5)
 	defer cancel()
 
-	cli.Put(ctx, "/mysql/host", "sh-cynosdbmysql-grp-gdj3i6os.sql.tencentcdb.com")
-	cli.Put(ctx, "/mysql/port", "20958")
-	cli.Put(ctx, "/mysql/username", "root")
-	cli.Put(ctx, "/mysql/password", "Azusa1111/")
-
 	res, _ := cli.Get(ctx, "/mysql/host")
 	fmt.Println(res)
+	sample()
 }
 
 func sample() {
