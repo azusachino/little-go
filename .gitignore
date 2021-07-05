@@ -4,3 +4,6 @@
 # file
 /modules.txt
 vendor/
+
+## config
+app.toml
