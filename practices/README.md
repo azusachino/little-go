@@ -11,14 +11,14 @@ package main
 
 // 对齐
 type T struct {
-	name  string // name of the object
-	value int    // its value
+ name  string // name of the object
+ value int    // its value
 }
 ```
 
 ## Commentary
 
-- C style: /**/
+- C style: /\*\*/
 - C++ style: //
 
 Commentary in go mainly is using at describing package. If the package is simple, the package comment can be brief.  
@@ -56,7 +56,7 @@ type Regexp struct{}
 
 // Compile parses a regular expression and returns, if successful, a Regexp that can be used to match against text.
 func Compile(str string) (*Regexp, error) {
-	return nil, nil
+ return nil, nil
 }
 ```
 
@@ -91,20 +91,20 @@ package main
 import "fmt"
 
 func main() {
-	var t interface{}
-	t = ""
-	switch t := t.(type) {
-	default:
-		fmt.Printf("unexpected type %T\n", t)
-	case bool:
-		fmt.Printf("boolean %t\n", t)
-	case int:
-		fmt.Printf("int %t\n", t)
-	case *bool:
-		fmt.Printf("ptr to boolean %t\n", t)
-	case *int:
-		fmt.Printf("ptr to int %t\n", t)
-	}
+ var t interface{}
+ t = ""
+ switch t := t.(type) {
+ default:
+  fmt.Printf("unexpected type %T\n", t)
+ case bool:
+  fmt.Printf("boolean %t\n", t)
+ case int:
+  fmt.Printf("int %t\n", t)
+ case *bool:
+  fmt.Printf("ptr to boolean %t\n", t)
+ case *int:
+  fmt.Printf("ptr to int %t\n", t)
+ }
 }
 ```
 
@@ -161,7 +161,7 @@ func Contents(filename string) (string, error) {
 
 ### Allocation with `new`
 
-It's a built-in function that allocates memory, but unlike its namesakes in some other languages it does not initialize the memory, it only zeros it. That is, new(T) allocates zeroed storage for a new item of type T and returns its address, a value of type *T. In Go terminology, it returns a pointer to a newly allocated zero value of type T.
+It's a built-in function that allocates memory, but unlike its namesakes in some other languages it does not initialize the memory, it only zeros it. That is, new(T) allocates zeroed storage for a new item of type T and returns its address, a value of type \*T. In Go terminology, it returns a pointer to a newly allocated zero value of type T.
 
 ### Constructors and composite literals
 
@@ -177,13 +177,13 @@ func NewFile(fd int, name string) *File {
 
 ### Allocation with `make`
 
-Back to allocation. The built-in function make(T, args) serves a purpose different from new(T). It creates slices, maps, and channels only, and it returns an initialized (not zeroed) value of type T (not *T). The reason for the distinction is that these three types represent, under the covers, references to data structures that must be initialized before use.
+Back to allocation. The built-in function make(T, args) serves a purpose different from new(T). It creates slices, maps, and channels only, and it returns an initialized (not zeroed) value of type T (not \*T). The reason for the distinction is that these three types represent, under the covers, references to data structures that must be initialized before use.
 
 ## Initialization
 
 ### Constants
 
-Constants in Go are just that—constant. They are created at compile time, even when defined as locals in functions, and can only be numbers, characters (runes), strings or booleans. Because of the compile-time restriction, the expressions that define them must be constant expressions, evaluatable by the compiler. 
+Constants in Go are just that—constant. They are created at compile time, even when defined as locals in functions, and can only be numbers, characters (runes), strings or booleans. Because of the compile-time restriction, the expressions that define them must be constant expressions, evaluatable by the compiler.
 
 ### Variables
 
@@ -225,8 +225,8 @@ func (s ByteSlice) Append(data []byte) []byte {
 
 // With Pointers
 func(p *ByteSlice) append(data []byte) {
-	s := *p
-	*p = append(s, data...)
+ s := *p
+ *p = append(s, data...)
 }
 ```
 
@@ -255,7 +255,7 @@ case Stringer:
 
 var val interface{}
 func main() {
-	var valName = val.(map[string]interface{})["name"]
+ var valName = val.(map[string]interface{})["name"]
 }
 ```
 
