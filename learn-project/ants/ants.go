@@ -10,14 +10,12 @@ import (
 )
 
 const (
-	// 默认协程池大小：1<<31 - 1
-	DefaultPoolSize = math.MaxInt32
-	// 默认清理周期：1s
-	DefaultCleanInterval = time.Second
+	DefaultPoolSize      = math.MaxInt32 // 默认协程池大小：1<<31 - 1
+	DefaultCleanInterval = time.Second   // 默认清理周期：1s
 )
 
+// 协程池的状态
 const (
-	// 协程池的状态
 	OPEN = iota
 	CLOSED
 )
@@ -32,8 +30,6 @@ var (
 
 	// 根据CPU数量判断工作channel是否是buffered chan
 	workerChanCap = func() int {
-		// GOMAXPROCS sets the maximum number of CPUs that can be executing
-		// simultaneously and returns the previous setting.
 		if runtime.GOMAXPROCS(0) == 1 {
 			return 0
 		}
@@ -46,7 +42,7 @@ var (
 	defaultAntsPool, _ = NewPool(DefaultPoolSize)
 )
 
-// 定义了logger的行为
+// Logger 定义了logger的行为
 type Logger interface {
 	Printf(format string, args ...interface{})
 }
@@ -79,4 +75,8 @@ func Release() {
 // Reboot reboots the default pool.
 func Reboot() {
 	defaultAntsPool.Reboot()
+}
+
+func IsRunning() bool {
+	return defaultAntsPool.Running() > 0
 }

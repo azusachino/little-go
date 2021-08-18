@@ -9,7 +9,7 @@ import (
 type goWorker struct {
 	pool        *Pool       // 所属协程池
 	task        chan func() // 实际运行的方法
-	recycleTime time.Time
+	recycleTime time.Time   // expiry time
 }
 
 func (w *goWorker) run() {
@@ -21,7 +21,7 @@ func (w *goWorker) run() {
 		defer func() {
 			// count - 1
 			w.pool.decreaseRunning()
-			// 放回snyc.Pool等待下次retrieveGoWorker
+			// 放回sync.Pool等待下次retrieveGoWorker
 			w.pool.workerCache.Put(w)
 			if p := recover(); p != nil {
 				if ph := w.pool.options.PanicHandler; ph != nil {

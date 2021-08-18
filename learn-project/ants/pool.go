@@ -19,38 +19,7 @@ type Pool struct {
 	options     *Options    // 协程池配置
 }
 
-// 定期清除过期任务
-func (p *Pool) purgePeriodically() {
-
-	// 定时器
-	heartBeat := time.NewTicker(p.options.ExpiryDuration)
-
-	defer heartBeat.Stop()
-
-	for range heartBeat.C {
-		// 直到协程池CLOSED为止
-		if atomic.LoadInt32(&p.state) == CLOSED {
-			break
-		}
-		// 获取已超时任务（线程安全）
-		p.lock.Lock()
-		expiredWorkers := p.workers.retrieveExpiry(p.options.ExpiryDuration)
-		p.lock.Unlock()
-
-		// 直接清除
-		for i := range expiredWorkers {
-			expiredWorkers[i].task = nil // help GC
-			expiredWorkers[i] = nil
-		}
-
-		// 目前没有任何正在运行的任务，唤醒那些阻塞在 p.cond.Wait() 的任务
-		if p.Running() == 0 {
-			p.cond.Broadcast()
-		}
-	}
-}
-
-// 创建新的协程池
+// NewPool 创建新的协程池
 func NewPool(size int, options ...Option) (*Pool, error) {
 	opts := loadOptions(options...)
 
@@ -99,7 +68,7 @@ func NewPool(size int, options ...Option) (*Pool, error) {
 	return p, nil
 }
 
-// 向池提交任务
+// Submit 向池提交任务
 func (p *Pool) Submit(task func()) error {
 	if atomic.LoadInt32(&p.state) == CLOSED {
 		return ErrPoolClosed
@@ -223,4 +192,35 @@ func (p *Pool) revertWorker(worker *goWorker) bool {
 	p.cond.Signal()
 	p.lock.Unlock()
 	return true
+}
+
+// 定期清除过期任务
+func (p *Pool) purgePeriodically() {
+
+	// 定时器
+	heartBeat := time.NewTicker(p.options.ExpiryDuration)
+
+	defer heartBeat.Stop()
+
+	for range heartBeat.C {
+		// 直到协程池CLOSED为止
+		if atomic.LoadInt32(&p.state) == CLOSED {
+			break
+		}
+		// 获取已超时任务（线程安全）
+		p.lock.Lock()
+		expiredWorkers := p.workers.retrieveExpiry(p.options.ExpiryDuration)
+		p.lock.Unlock()
+
+		// 直接清除
+		for i := range expiredWorkers {
+			expiredWorkers[i].task = nil // help GC
+			expiredWorkers[i] = nil
+		}
+
+		// 目前没有任何正在运行的任务，唤醒那些阻塞在 p.cond.Wait() 的任务
+		if p.Running() == 0 {
+			p.cond.Broadcast()
+		}
+	}
 }
