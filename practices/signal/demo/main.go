@@ -11,8 +11,8 @@ func main() {
 	sigs := make(chan os.Signal, 1)
 	done := make(chan bool, 1)
 
-	// watch signal
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	// watch signal -1, -9 ,-13
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGKILL, syscall.SIGTERM)
 
 	go func() {
 		sig := <-sigs

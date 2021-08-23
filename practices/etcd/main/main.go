@@ -17,7 +17,7 @@ func init() {
 	viper.AddConfigPath(".")
 	viper.SetConfigName("app")
 	viper.SetConfigType("toml")
-	viper.ReadInConfig()
+	_ = viper.ReadInConfig()
 
 	etcdCluster := viper.GetStringSlice("etcd.cluster")
 	cli, _ = clientv3.New(clientv3.Config{

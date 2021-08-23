@@ -1,4 +1,4 @@
-package exec_order
+package main
 
 import "sync"
 
