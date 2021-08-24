@@ -7,6 +7,7 @@ require (
 	github.com/ajg/form v1.5.1 // indirect
 	github.com/apache/rocketmq-client-go/v2 v2.1.0
 	github.com/elastic/go-elasticsearch/v7 v7.12.0
+	github.com/fsnotify/fsnotify v1.4.7
 	github.com/gin-gonic/gin v1.7.1
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/golang/protobuf v1.5.2
@@ -53,7 +54,6 @@ require (
 	github.com/eknkc/amber v0.0.0-20171010120322-cdade1c07385 // indirect
 	github.com/emirpasic/gods v1.12.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
-	github.com/fsnotify/fsnotify v1.4.7 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.13.0 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect
