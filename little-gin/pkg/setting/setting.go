@@ -61,7 +61,7 @@ var RedisSetting = &Redis{}
 
 func Setup() {
 	viper.SetConfigName("app")
-	// location related to main.go
+	// location related to str.go
 	viper.AddConfigPath("conf/")
 
 	err := viper.ReadInConfig()

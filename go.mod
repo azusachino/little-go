@@ -12,6 +12,7 @@ require (
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/golang/protobuf v1.5.2
 	github.com/google/go-querystring v1.1.0 // indirect
+	github.com/google/uuid v1.1.2
 	github.com/gorilla/mux v1.7.3
 	github.com/imkira/go-interpol v1.1.0 // indirect
 	github.com/kataras/iris/v12 v12.1.8
