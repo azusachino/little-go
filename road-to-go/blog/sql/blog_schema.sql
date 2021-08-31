@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS `blog_service` DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8bm4_general_ci;
+CREATE DATABASE IF NOT EXISTS `blog_service` CHARACTER SET utf8mb4 COLLATE = utf8mb4_general_ci;
 
 -- blog_tag
 CREATE TABLE IF NOT EXISTS `blog_tag`
@@ -13,8 +13,9 @@ CREATE TABLE IF NOT EXISTS `blog_tag`
     `deleted_on`  int(10) unsigned    DEFAULT 0 COMMENT 'delete time',
     `is_del`      tinyint(3) unsigned DEFAULT 0 COMMENT '0 not delete, 1 deleted',
     PRIMARY KEY (`id`)
-    ) ENGINE = InnoDB
-    DEFAULT CHARSET = utf8bm4 COMMENT 'tag management';
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci COMMENT 'tag management';
 
 -- blog_article
 CREATE TABLE IF NOT EXISTS `blog_article`
@@ -23,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `blog_article`
     `title`           varchar(100)        DEFAULT '' COMMENT 'article title',
     `desc`            varchar(255)        DEFAULT '' COMMENT 'article desc',
     `cover_image_url` varchar(255)        DEFAULT '' COMMENT 'article cover image url',
-    `content`         text                DEFAULT '' COMMENT 'article content',
+    `content`         text COMMENT 'article content',
     `created_on`      int(10) unsigned    DEFAULT 0 COMMENT 'create time',
     `created_by`      varchar(100)        DEFAULT '' COMMENT 'created by someone',
     `modified_on`     int(10) unsigned    DEFAULT 0 COMMENT 'modified time',
@@ -31,8 +32,9 @@ CREATE TABLE IF NOT EXISTS `blog_article`
     `deleted_on`      int(10) unsigned    DEFAULT 0 COMMENT 'delete time',
     `is_del`          tinyint(3) unsigned DEFAULT 0 COMMENT '0 not delete, 1 deleted',
     PRIMARY KEY (`id`)
-    ) ENGINE = InnoDB
-    DEFAULT CHARSET = utf8bm4 COMMENT 'article management';
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci COMMENT 'article management';
 
 -- blog_article_tag
 CREATE TABLE IF NOT EXISTS `blog_article_tag`
@@ -47,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `blog_article_tag`
     `deleted_on`  int(10) unsigned    DEFAULT 0 COMMENT 'delete time',
     `is_del`      tinyint(3) unsigned DEFAULT 0 COMMENT '0 not delete, 1 deleted',
     PRIMARY KEY (`id`)
-    ) ENGINE = InnoDB
-    DEFAULT CHARSET = utf8bm4 COMMENT 'article tag relation';
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci COMMENT 'article tag relation';
 
