@@ -9,7 +9,6 @@ require (
 	github.com/elastic/go-elasticsearch/v7 v7.12.0
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/gin-gonic/gin v1.7.1
-	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/golang/protobuf v1.5.2
 	github.com/google/go-querystring v1.1.0 // indirect
@@ -28,11 +27,12 @@ require (
 	github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
+	go.etcd.io/etcd/api/v3 v3.5.0-rc.0
 	go.etcd.io/etcd/client/v3 v3.5.0-rc.0
 	go.uber.org/multierr v1.7.0 // indirect
 	go.uber.org/zap v1.17.0
-	google.golang.org/grpc v1.38.0
-	google.golang.org/protobuf v1.26.0
+	google.golang.org/grpc v1.40.0
+	google.golang.org/protobuf v1.27.1
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
 )
 
@@ -60,7 +60,6 @@ require (
 	github.com/go-playground/locales v0.13.0 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/go-playground/validator/v10 v10.4.1 // indirect
-	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
@@ -78,8 +77,6 @@ require (
 	github.com/jcmturner/gofork v1.0.0 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.4.2 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
-	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/json-iterator/go v1.1.9 // indirect
 	github.com/kataras/golog v0.0.10 // indirect
 	github.com/kataras/pio v0.0.2 // indirect
@@ -113,7 +110,6 @@ require (
 	github.com/tidwall/match v1.0.1 // indirect
 	github.com/tidwall/pretty v0.0.0-20190325153808-1166b9ac2b65 // indirect
 	github.com/ugorji/go/codec v1.1.7 // indirect
-	go.etcd.io/etcd/api/v3 v3.5.0-rc.0 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.0-rc.0 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
 	golang.org/x/crypto v0.0.0-20210220033148-5ea612d1eb83 // indirect
@@ -124,7 +120,5 @@ require (
 	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c // indirect
 	gopkg.in/ini.v1 v1.51.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	gorm.io/driver/mysql v1.1.2 // indirect
-	gorm.io/gorm v1.21.14 // indirect
 	stathat.com/c/consistent v1.0.0 // indirect
 )
