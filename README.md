@@ -52,7 +52,7 @@ type golang interface{}
 
 // 由main函数作为程序入口点启动
 func main() {
-    Println("Hello World!" + name)
+	Println("Hello World!" + name)
 }
 ```
 
@@ -103,12 +103,12 @@ package demo
 import "time"
 
 type User struct {
-    Id        int       `json:"id"`
-    Name      string    `json:"name"`
-    Bio       string    `json:"about,omitempty"`
-    Active    bool      `json:"active"`
-    Admin     bool      `json:"-"`
-    CreatedAt time.Time `json:"created_at"`
+	Id        int       `json:"id"`
+	Name      string    `json:"name"`
+	Bio       string    `json:"about,omitempty"`
+	Active    bool      `json:"active"`
+	Admin     bool      `json:"-"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 ```
@@ -122,6 +122,11 @@ type DefaultValidator struct {
 }
 
 func (dv DefaultValidator) Validate(val interface{}) (bool, error) {
-    return val.(bool), nil // val.(type)
+	return val.(bool), nil // val.(type)
 }
 ```
+
+## update go.mod dependencies version
+
+1. clean go.mod requires part
+2. then run go mod tidy && vendor
