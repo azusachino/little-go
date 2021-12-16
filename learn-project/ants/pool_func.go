@@ -32,7 +32,7 @@ type PoolWithFunc struct {
 	// poolFunc is the function for processing tasks.
 	poolFunc func(interface{}) // 相当于goWorker
 
-	// workerCache speeds up the obtainment of the an usable worker in function:retrieveWorker.
+	// workerCache speeds up the obtainment of an usable worker in function:retrieveWorker.
 	workerCache sync.Pool
 
 	// blockingNum is the number of the goroutines already been blocked on pool.Submit, protected by pool.lock
