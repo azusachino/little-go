@@ -130,7 +130,10 @@ func ReadFull(r Reader, buf []byte) (n int, err error) {
 
 ### Defer
 
-Go's defer statement schedules a function call (the deferred function) to be run immediately before the function executing the defer returns. It's an unusual but effective way to deal with situations such as resources that must be released regardless of which path a function takes to return. The canonical examples are unlocking a mutex or closing a file.
+Go's defer statement schedules a function call (the deferred function) to be run immediately before the function
+executing the defer returns. It's an unusual but effective way to deal with situations such as resources that must be
+released regardless of which path a function takes to return. The canonical examples are unlocking a mutex or closing a
+file.
 
 ```go
 // Contents returns the file's contents as a string.
@@ -161,7 +164,9 @@ func Contents(filename string) (string, error) {
 
 ### Allocation with `new`
 
-It's a built-in function that allocates memory, but unlike its namesakes in some other languages it does not initialize the memory, it only zeros it. That is, new(T) allocates zeroed storage for a new item of type T and returns its address, a value of type \*T. In Go terminology, it returns a pointer to a newly allocated zero value of type T.
+It's a built-in function that allocates memory, but unlike its namesakes in some other languages it does not initialize
+the memory, it only zeros it. That is, new(T) allocates zeroed storage for a new item of type T and returns its address,
+a value of type \*T. In Go terminology, it returns a pointer to a newly allocated zero value of type T.
 
 ### Constructors and composite literals
 
@@ -177,13 +182,18 @@ func NewFile(fd int, name string) *File {
 
 ### Allocation with `make`
 
-Back to allocation. The built-in function make(T, args) serves a purpose different from new(T). It creates slices, maps, and channels only, and it returns an initialized (not zeroed) value of type T (not \*T). The reason for the distinction is that these three types represent, under the covers, references to data structures that must be initialized before use.
+Back to allocation. The built-in function make(T, args) serves a purpose different from new(T). It creates slices, maps,
+and channels only, and it returns an initialized (not zeroed) value of type T (not \*T). The reason for the distinction
+is that these three types represent, under the covers, references to data structures that must be initialized before
+use.
 
 ## Initialization
 
 ### Constants
 
-Constants in Go are just that—constant. They are created at compile time, even when defined as locals in functions, and can only be numbers, characters (runes), strings or booleans. Because of the compile-time restriction, the expressions that define them must be constant expressions, evaluatable by the compiler.
+Constants in Go are just that—constant. They are created at compile time, even when defined as locals in functions, and
+can only be numbers, characters (runes), strings or booleans. Because of the compile-time restriction, the expressions
+that define them must be constant expressions, evaluatable by the compiler.
 
 ### Variables
 
@@ -191,7 +201,10 @@ Variables can be initialized just like constants but the initializer can be a ge
 
 ### The init function
 
-Finally, each source file can define its own niladic init function to set up whatever state is required. (Actually each file can have multiple init functions.) And finally means finally: init is called after all the variable declarations in the package have evaluated their initializers, and those are evaluated only after all the imported packages have been initialized.
+Finally, each source file can define its own niladic init function to set up whatever state is required. (Actually each
+file can have multiple init functions.) And finally means finally: init is called after all the variable declarations in
+the package have evaluated their initializers, and those are evaluated only after all the imported packages have been
+initialized.
 
 ```go
 func init() {

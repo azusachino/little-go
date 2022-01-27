@@ -31,6 +31,7 @@ func triangle() {
 ## 常量的定义
 
 const数值可以作为各种类型使用
+
 ```go
 package main
 import "fmt"

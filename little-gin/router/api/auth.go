@@ -10,5 +10,6 @@ type auth struct {
 }
 
 func GetAuth(c *gin.Context) {
+	c.Header("", "")
 	c.FullPath()
 }

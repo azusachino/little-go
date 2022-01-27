@@ -19,10 +19,12 @@ func init() {
 	viper.SetConfigType("toml")
 	_ = viper.ReadInConfig()
 
+	ctx := context.Background()
 	etcdCluster := viper.GetStringSlice("etcd.cluster")
 	cli, _ = clientv3.New(clientv3.Config{
 		Endpoints:   etcdCluster,
 		DialTimeout: 5 * time.Second,
+		Context:     ctx,
 	})
 }
 

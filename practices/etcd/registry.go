@@ -62,6 +62,7 @@ func (service *Service) Start() (err error) {
 func (service *Service) Stop() {
 	service.stop <- nil
 }
+
 func (service *Service) keepAlive() (<-chan *clientv3.LeaseKeepAliveResponse, error) {
 	info := &service.ServiceInfo
 	key := info.Name + "/" + info.IP

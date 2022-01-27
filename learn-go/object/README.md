@@ -15,7 +15,7 @@ func (node *treeNode) setValue(n int) {
 }
 ```
 
-- 改变内容必须使用指针接收者  
+- 改变内容必须使用指针接收者
 - 结构过大考虑使用指针接收者
 
 ## wrapper (camelCase)

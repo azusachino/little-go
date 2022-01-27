@@ -5,16 +5,16 @@ package mail;
 option go_package = "github.com/little-go/practices/grpc/proto";
 
 service MailService {
-    rpc SendMail(MailRequest) returns (MailResponse) {
+  rpc SendMail(MailRequest) returns (MailResponse) {
 
-    }
+  }
 }
 
 message MailRequest {
-    string mail = 1;
-    string text = 2;
+  string mail = 1;
+  string text = 2;
 }
 
 message MailResponse {
-    bool ok = 1;
+  bool ok = 1;
 }

@@ -24,9 +24,11 @@ type poolLocal struct {
 }
 ```
 
-poolLocal 数组的大小时 goroutine 中 P 的数量，访问时，P 的 id 对应 poolLocal 数组下标索引，所以 Pool 的最大个数是`runtime.GOMAXPROCS(0)`。通过这样的设计，每个 P 都有了自己的本地空间，多个 goroutine 使用同一个 Pool 时，减少了竞争，提升了性能。
+poolLocal 数组的大小时 goroutine 中 P 的数量，访问时，P 的 id 对应 poolLocal 数组下标索引，所以 Pool 的最大个数是`runtime.GOMAXPROCS(0)`。通过这样的设计，每个 P
+都有了自己的本地空间，多个 goroutine 使用同一个 Pool 时，减少了竞争，提升了性能。
 
-poolLocal 里面有一个 pad 数组用来占位用，防止在 cache line 上分配多个 poolLocalInternal 从而造成 false sharing，参考[What’s false sharing and how to solve it](https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10)
+poolLocal 里面有一个 pad 数组用来占位用，防止在 cache line 上分配多个 poolLocalInternal 从而造成 false
+sharing，参考[What’s false sharing and how to solve it](https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10)
 
 ```go
 type poolLocalInternal struct {
@@ -52,7 +54,8 @@ type poolDequeue struct {
 }
 ```
 
-poolChain 是一个双端队列，里面的 head 和 tail 分别指向队列头尾；poolDequeue 里面存放真正的数据，是一个单生产者、多消费者的固定大小的无锁的环状队列，headTail 是环状队列的首位位置的指针，可以通过位运算解析出首尾的位置，生产者可以从 head 插入、head 删除，而消费者仅可从 tail 删除。
+poolChain 是一个双端队列，里面的 head 和 tail 分别指向队列头尾；poolDequeue 里面存放真正的数据，是一个单生产者、多消费者的固定大小的无锁的环状队列，headTail
+是环状队列的首位位置的指针，可以通过位运算解析出首尾的位置，生产者可以从 head 插入、head 删除，而消费者仅可从 tail 删除。
 
 ![pic](https://img.luozhiyun.com/20201226184348.png)
 
@@ -115,9 +118,11 @@ func (p *Pool) pin() (*poolLocal, int) {
 }
 ```
 
-pin 方法里面首先会调用 runtime_procPin 方法会先获取当前 goroutine，然后绑定到对应的 M 上，然后返回 M 目前绑定的 P 的 id，因为这个 pid 后面会用到，防止在使用途中 P 被抢占，参考[golang 的对象池 sync.pool 源码解读](https://zhuanlan.zhihu.com/p/99710992)
+pin 方法里面首先会调用 runtime_procPin 方法会先获取当前 goroutine，然后绑定到对应的 M 上，然后返回 M 目前绑定的 P 的 id，因为这个 pid 后面会用到，防止在使用途中 P
+被抢占，参考[golang 的对象池 sync.pool 源码解读](https://zhuanlan.zhihu.com/p/99710992)
 
-之后使用原子操作取出 localSize，如果当前 pid 大于 localSize，那么就表示 Pool 还没创建对应的 poolLocal，那么调用 pinSlow 进行创建工作，否则调用 indexLocal 取出 pid 对应的 poolLocal 返回。
+之后使用原子操作取出 localSize，如果当前 pid 大于 localSize，那么就表示 Pool 还没创建对应的 poolLocal，那么调用 pinSlow 进行创建工作，否则调用 indexLocal 取出 pid 对应的
+poolLocal 返回。
 
 ```go
 func indexLocal(l unsafe.Pointer, i int) *poolLocal {
@@ -417,4 +422,5 @@ func poolCleanup() {
 }
 ```
 
-poolCleanup 会在 STW 阶段被调用。主要是将 local 和 victim 作交换，那么不至于 GC 把所有的 Pool 都清空了，而是需要两个 GC 周期才会被释放。如果 sync.Pool 的获取、释放速度稳定，那么就不会有新的池对象进行分配。
+poolCleanup 会在 STW 阶段被调用。主要是将 local 和 victim 作交换，那么不至于 GC 把所有的 Pool 都清空了，而是需要两个 GC 周期才会被释放。如果 sync.Pool
+的获取、释放速度稳定，那么就不会有新的池对象进行分配。
