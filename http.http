@@ -1,0 +1,3 @@
+GET http://172.31.103.161:18000/api/v1/dispatch/get-can-use?mucNum=777
+appKey: 1000000001
+authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMDAwMDAwMDAxIiwidGltZSI6IjE2MjczNzIzMjcifQ.77nOTZ5ZhV8iTa54t3ht_Dwl5oQMdIlbfJh0My6U2Gc
