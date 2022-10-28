@@ -5,12 +5,14 @@ go 1.18
 require (
 	github.com/Shopify/sarama v1.36.0
 	github.com/apache/rocketmq-client-go/v2 v2.1.1
+	github.com/caarlos0/env/v6 v6.10.1
 	github.com/cloudwego/hertz v0.2.1
 	github.com/containerd/containerd v1.6.8
 	github.com/elastic/go-elasticsearch/v7 v7.17.1
 	github.com/fsnotify/fsnotify v1.5.4
 	github.com/gin-gonic/gin v1.8.1
 	github.com/go-redis/redis v6.15.9+incompatible
+	github.com/go-rod/rod v0.112.0
 	github.com/gocolly/colly/v2 v2.1.0
 	github.com/golang/protobuf v1.5.2
 	github.com/google/uuid v1.3.0
@@ -147,6 +149,9 @@ require (
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	github.com/valyala/fasthttp v1.39.0 // indirect
 	github.com/yalp/jsonpath v0.0.0-20180802001716-5cc68e5049a0 // indirect
+	github.com/ysmood/goob v0.4.0 // indirect
+	github.com/ysmood/gson v0.7.1 // indirect
+	github.com/ysmood/leakless v0.8.0 // indirect
 	github.com/yudai/gojsondiff v1.0.0 // indirect
 	github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.4 // indirect

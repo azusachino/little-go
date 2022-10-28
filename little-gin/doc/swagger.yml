@@ -9,12 +9,12 @@ definitions:
         type: string
     type: object
 info:
-  contact: { }
+  contact: {}
   description: An example of gin
   license:
     name: MIT
-    url: https://github.com/AzusaChino/little-go/blob/master/LICENSE
-  termsOfService: https://github.com/AzusaChino/little-go
+    url: https://github.com/azusachino/little-go/blob/master/LICENSE
+  termsOfService: https://github.com/azusachino/little-go
   title: Golang Gin API
   version: "1.0"
 paths:
@@ -42,11 +42,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Get multiple articles
     post:
       parameters:
@@ -92,11 +92,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Add article
   /api/v1/articles/{id}:
     delete:
@@ -112,11 +112,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Delete article
     get:
       parameters:
@@ -131,11 +131,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Get a single article
     put:
       parameters:
@@ -181,11 +181,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Update article
   /api/v1/tags:
     get:
@@ -204,11 +204,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Get multiple article tags
     post:
       parameters:
@@ -234,11 +234,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Add article tag
   /api/v1/tags/{id}:
     delete:
@@ -254,11 +254,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Delete article tag
     put:
       parameters:
@@ -290,11 +290,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Update article tag
   /api/v1/tags/export:
     post:
@@ -315,11 +315,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Export article tag
   /api/v1/tags/import:
     post:
@@ -335,11 +335,11 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Import Image
   /auth:
     get:
@@ -360,10 +360,10 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
         "500":
           description: Internal Server Error
           schema:
-            $ref: '#/definitions/app.Response'
+            $ref: "#/definitions/app.Response"
       summary: Get Auth
 swagger: "2.0"
