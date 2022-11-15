@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/little-go/practices/concurrent"
+	"github.com/azusachino/little-go/practices/concurrent"
 	"strings"
 	"sync"
 	"time"

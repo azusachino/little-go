@@ -2,7 +2,7 @@ package gee_cache
 
 import (
 	"fmt"
-	"github.com/little-go/learn-project/cache/gee_cache/single_flight"
+	"github.com/azusachino/little-go/learn-project/cache/gee_cache/single_flight"
 	"log"
 	"sync"
 )

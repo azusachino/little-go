@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/little-go/learn-go/code/retriever/mock"
-	"github.com/little-go/learn-go/code/retriever/real"
+	"github.com/azusachino/little-go/learn-go/code/retriever/mock"
+	"github.com/azusachino/little-go/learn-go/code/retriever/real"
 	"time"
 )
 

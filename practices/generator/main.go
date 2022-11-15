@@ -1,7 +1,7 @@
 package generator
 
 import "fmt"
-import . "github.com/little-go/practices/generator/gen"
+import . "github.com/azusachino/little-go/practices/generator/gen"
 
 //go:generate ./gen.sh ./template/container.tmp.go gen uint32 container
 func generateUint32Example() {

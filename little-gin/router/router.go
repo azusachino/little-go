@@ -1,8 +1,8 @@
 package router
 
 import (
+	"github.com/azusachino/little-go/little-gin/router/api"
 	"github.com/gin-gonic/gin"
-	"github.com/little-go/little-gin/router/api"
 	"net/http"
 )
 

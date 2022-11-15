@@ -1,8 +1,8 @@
 package routers
 
 import (
+	v1 "github.com/azusachino/little-go/road-to-go/blog/internal/routers/api"
 	"github.com/gin-gonic/gin"
-	v1 "github.com/little-go/road-to-go/blog/internal/routers/api"
 )
 
 func NewRouter() *gin.Engine {

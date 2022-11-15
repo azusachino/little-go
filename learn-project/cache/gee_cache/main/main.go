@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/little-go/learn-project/cache/gee_cache"
+	"github.com/azusachino/little-go/learn-project/cache/gee_cache"
 	"log"
 	"net/http"
 )

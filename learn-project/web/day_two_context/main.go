@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/little-go/learn-project/web/day_two_context/gee"
+	"github.com/azusachino/little-go/learn-project/web/day_two_context/gee"
 	"net/http"
 )
 

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/little-go/little-gin/pkg/setting"
+	"github.com/azusachino/little-go/little-gin/pkg/setting"
 )
 
 func init() {

@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/azusachino/little-go/road-to-go/blog/global"
+	"github.com/azusachino/little-go/road-to-go/blog/internal/routers"
+	setting "github.com/azusachino/little-go/road-to-go/blog/pkg/setting"
 	"github.com/gin-gonic/gin"
-	"github.com/little-go/road-to-go/blog/global"
-	"github.com/little-go/road-to-go/blog/internal/routers"
-	setting "github.com/little-go/road-to-go/blog/pkg/setting"
 	"log"
 	"net/http"
 	"time"

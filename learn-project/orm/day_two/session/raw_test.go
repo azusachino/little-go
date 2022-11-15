@@ -2,7 +2,7 @@ package session
 
 import (
 	"database/sql"
-	"github.com/little-go/learn-project/orm/day_two/dialect"
+	"github.com/azusachino/little-go/learn-project/orm/day_two/dialect"
 	"os"
 	"testing"
 )

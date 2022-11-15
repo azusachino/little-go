@@ -1,6 +1,6 @@
 package main
 
-import . "github.com/little-go/practices/visitor"
+import . "github.com/azusachino/little-go/practices/visitor"
 
 func main() {
 	info := Info{}

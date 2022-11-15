@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/little-go/learn-project/ants"
+	"github.com/azusachino/little-go/learn-project/ants"
 
-    "github.com/caarlos0/env/v6"
+	"github.com/caarlos0/env/v6"
 	"time"
 )
 
@@ -21,7 +21,7 @@ type config struct {
 
 func main() {
 
-    cfg := config{}
+	cfg := config{}
 	if err := env.Parse(&cfg); err != nil {
 		fmt.Printf("%+v\n", err)
 	}

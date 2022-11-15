@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/little-go/road-to-go/tour/cmd"
+	"github.com/azusachino/little-go/road-to-go/tour/cmd"
 	"log"
 )
 

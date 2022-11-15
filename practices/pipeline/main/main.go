@@ -1,6 +1,6 @@
 package main
 
-import "github.com/little-go/practices/pipeline"
+import "github.com/azusachino/little-go/practices/pipeline"
 
 func main() {
 	arr := []int{1, 2, 3, 4, 5}

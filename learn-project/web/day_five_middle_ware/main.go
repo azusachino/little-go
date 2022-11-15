@@ -20,7 +20,7 @@ $ curl http://localhost:9999/v2/hello/geektutu
 */
 
 import (
-	"github.com/little-go/learn-project/web/day_five_middle_ware/gee"
+	"github.com/azusachino/little-go/learn-project/web/day_five_middle_ware/gee"
 	"log"
 	"net/http"
 	"time"

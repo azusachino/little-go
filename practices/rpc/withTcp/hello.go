@@ -15,7 +15,7 @@ func (h *HelloService) Hello(req string, reply *string) error {
 // 重构
 
 // 1. service name
-const HelloServiceName = "github.com/little-go/practices/rpc/withTcp.HelloService"
+const HelloServiceName = "github.com/azusachino/little-go/practices/rpc/withTcp.HelloService"
 
 // 2. service interface
 type HelloServiceInterface interface {

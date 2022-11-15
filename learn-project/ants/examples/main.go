@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/little-go/learn-project/ants"
+	"github.com/azusachino/little-go/learn-project/ants"
 	"sync"
 	"sync/atomic"
 	"time"

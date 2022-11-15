@@ -2,8 +2,8 @@ package day_one
 
 import (
 	"database/sql"
-	"github.com/little-go/learn-project/orm/day_one/log"
-	"github.com/little-go/learn-project/orm/day_one/session"
+	"github.com/azusachino/little-go/learn-project/orm/day_one/log"
+	"github.com/azusachino/little-go/learn-project/orm/day_one/session"
 )
 
 // Engine is the main struct of orm, manages all db sessions and transactions.

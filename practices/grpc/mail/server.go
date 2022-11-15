@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	pb "github.com/little-go/practices/grpc/proto/mail"
+	pb "github.com/azusachino/little-go/practices/grpc/proto/mail"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"

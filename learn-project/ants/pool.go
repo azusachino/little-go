@@ -1,7 +1,7 @@
 package ants
 
 import (
-	"github.com/little-go/learn-project/ants/internal"
+	"github.com/azusachino/little-go/learn-project/ants/internal"
 	"sync"
 	"sync/atomic"
 	"time"

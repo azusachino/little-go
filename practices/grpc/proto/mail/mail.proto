@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mail;
 
-option go_package = "github.com/little-go/practices/grpc/proto";
+option go_package = "github.com/azusachino/little-go/practices/grpc/proto";
 
 service MailService {
   rpc SendMail(MailRequest) returns (MailResponse) {

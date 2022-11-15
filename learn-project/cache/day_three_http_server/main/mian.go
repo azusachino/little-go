@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	geeCache "github.com/little-go/learn-project/cache/day_three_http_server"
-	"github.com/little-go/learn-project/cache/day_three_http_server/lru"
+	geeCache "github.com/azusachino/little-go/learn-project/cache/day_three_http_server"
+	"github.com/azusachino/little-go/learn-project/cache/day_three_http_server/lru"
 	"log"
 	"net/http"
 )

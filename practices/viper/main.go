@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/little-go/practices/viper/app"
+	"github.com/azusachino/little-go/practices/viper/app"
 	"github.com/spf13/viper"
 	"log"
 )

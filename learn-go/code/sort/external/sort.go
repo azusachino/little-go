@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/little-go/learn-go/code/pipeline"
+	"github.com/azusachino/little-go/learn-go/code/pipeline"
 	"os"
 	"strconv"
 )

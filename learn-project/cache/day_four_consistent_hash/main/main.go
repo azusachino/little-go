@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	geeCache "github.com/little-go/learn-project/cache/day_four_consistent_hash"
+	geeCache "github.com/azusachino/little-go/learn-project/cache/day_four_consistent_hash"
 	"log"
 	"net/http"
 )

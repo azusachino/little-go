@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	. "github.com/little-go/learn-go/structure"
+	. "github.com/azusachino/little-go/learn-go/structure"
 	"unicode/utf8"
 )
 

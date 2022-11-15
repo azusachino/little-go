@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/little-go/learn-go/object/tree"
+	"github.com/azusachino/little-go/learn-go/object/tree"
 )
 
 func main() {

@@ -27,7 +27,7 @@ $ curl "http://localhost:9999/xxx"
 */
 
 import (
-	"github.com/little-go/learn-project/web/day_three_router/gee"
+	"github.com/azusachino/little-go/learn-project/web/day_three_router/gee"
 	"net/http"
 )
 
