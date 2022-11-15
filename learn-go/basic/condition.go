@@ -2,22 +2,12 @@ package basic
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 )
-
-func bounded(v int) bool {
-	if v > 100 {
-		return true
-	} else if v < 0 {
-		return false
-	} else {
-		return true
-	}
-}
 
 func Aa() {
 	const filename = "README.md"
-	contents, err := ioutil.ReadFile(filename)
+	contents, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println(err)
 	} else {
@@ -28,7 +18,7 @@ func Aa() {
 func Aa2() {
 	const filename = "README.md"
 	// 作用域只在if内部
-	if contents, err := ioutil.ReadFile(filename); err != nil {
+	if contents, err := os.ReadFile(filename); err != nil {
 		fmt.Println(err)
 	} else {
 		fmt.Printf("%s\n", contents)

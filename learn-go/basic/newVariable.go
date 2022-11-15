@@ -32,7 +32,7 @@ func Variable() {
 	k, l := "kk", "ll" // 和var定义变量一样（语法糖）只能在函数内部使用
 	fmt.Println(s, i)
 	fmt.Println(a + b)
-	fmt.Printf(e, f, g)
+	fmt.Println(e, f, g)
 	fmt.Printf(k + l)
 
 	// 数组
@@ -48,9 +48,9 @@ func Variable() {
 	// 访问指针变量中指向地址的值。
 }
 
-func ptr() {
-	var a int = 20 /* 声明实际变量 */
-	var ip *int    /* 声明指针变量 */
+func Ptr() {
+	var a int = 20    /* 声明实际变量 */
+	var ip *int = nil /* 声明指针变量 */
 
 	ip = &a /* 指针变量的存储地址 */
 

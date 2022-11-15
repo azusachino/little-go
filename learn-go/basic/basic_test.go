@@ -1,11 +1,12 @@
-package main
+package basic
 
 import (
 	"fmt"
-	. "github.com/azusachino/little-go/learn-go/basic"
+	"sync"
+	"testing"
 )
 
-func main() {
+func TestBasic(t *testing.T) {
 	fmt.Println(Eval(1, 2, "-"))
 	Aa()
 	fmt.Println(Convert2Bin(5))    // 101
@@ -22,4 +23,15 @@ func main() {
 	// 下划线可以占位
 	c, _ := Div(2, 3)
 	fmt.Println(c)
+}
+
+func TestTyp(t *testing.T) {
+	mt := MyTools{
+		&HelloPrinter{},
+		sync.Mutex{},
+	}
+    
+	mt.Lock()
+	mt.print()
+	mt.Unlock()
 }
