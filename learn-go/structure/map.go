@@ -1,6 +1,9 @@
 package structure
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+)
 
 func M1() {
 	m1 := map[string]string{
@@ -26,4 +29,42 @@ func M1() {
 	} else {
 		fmt.Println("key not exists")
 	}
+
+	mm := make(map[string]map[string]int)
+	add(mm, "hello", "CN")
+
+	mk := make(map[Key]int)
+	mk[Key{
+		Path:    "hello",
+		Country: "CN",
+	}] = 1
+
+	c := Container{
+		sync.RWMutex{},
+		make(map[string]int),
+	}
+
+	c.Lock()
+	c._data["hello"] = 1
+	c.Unlock()
+}
+
+// deal with multi-level map
+func add(m map[string]map[string]int, path, country string) {
+	mm, ok := m[path]
+	// always check sub-level initialization
+	if !ok {
+		mm = make(map[string]int)
+		m[path] = mm
+	}
+	mm[country]++
+}
+
+type Key struct {
+	Path, Country string
+}
+
+type Container struct {
+	sync.RWMutex
+	_data map[string]int
 }
