@@ -1,24 +1,30 @@
-package main
+package exec_order
 
-import "sync"
+import (
+	"sync"
+	"testing"
+)
 
 var (
-	a    string
+	s    string
 	done bool
 )
 
 func setUp() {
-	a = "Hello World"
+	s = "Hello World"
 	done = true
 }
 
 // Go语言并不保证在main()函数中观测到的对done的写入操作发生在对字符串a的写入操作之后，因此程序很可能打印一个空字符串。
 // 更糟糕的是，因为两个线程之间没有同步事件，setup线程对done的写入操作甚至无法被main线程看到，main()函数有可能陷入死循环中。
-func main() {
+func TestMain(t *testing.T) {
 	go setUp()
 	for !done {
 	}
 	print(a)
+
+	main_()
+	_main_()
 }
 
 // 利用同步原语给两个事件明确排序

@@ -128,5 +128,13 @@ func (dv DefaultValidator) Validate(val interface{}) (bool, error) {
 
 ## update go.mod dependencies version
 
-1. clean go.mod requires part
+1. clean go.mod requires
 2. then run go mod tidy && vendor
+
+## go test
+
+`go test -v -run TestSquare`
+
+## Useful Libraries
+
+- "github.com/caarlos0/env/v6" -> load environments
