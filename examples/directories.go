@@ -2,7 +2,6 @@ package examples
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 )
@@ -16,7 +15,7 @@ func init() {
 
 	createEmptyFile := func(name string) {
 		d := []byte("")
-		check(ioutil.WriteFile(name, d, 0644))
+		check(os.WriteFile(name, d, 0644))
 	}
 
 	createEmptyFile("subdir/file1")
@@ -28,7 +27,7 @@ func init() {
 	createEmptyFile("subdir/parent/file3")
 	createEmptyFile("subdir/parent/child/file4")
 
-	c, err := ioutil.ReadDir("subdir/parent")
+	c, err := os.ReadDir("subdir/parent")
 	check(err)
 
 	fmt.Println("Listing subdir/parent")
@@ -39,7 +38,7 @@ func init() {
 	err = os.Chdir("subdir/parent/child")
 	check(err)
 
-	c, err = ioutil.ReadDir(".")
+	c, err = os.ReadDir(".")
 	check(err)
 
 	fmt.Println("Listing subdir/parent/child")
@@ -51,7 +50,7 @@ func init() {
 	check(err)
 
 	fmt.Println("Visiting subdir")
-	err = filepath.Walk("subdir", visit)
+	filepath.Walk("subdir", visit)
 }
 
 func visit(p string, info os.FileInfo, err error) error {
