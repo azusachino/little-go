@@ -7,7 +7,7 @@ require (
 	github.com/apache/rocketmq-client-go/v2 v2.1.1
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/cloudwego/hertz v0.4.1
-	github.com/containerd/containerd v1.6.10
+	github.com/containerd/containerd v1.6.12
 	github.com/elastic/go-elasticsearch/v7 v7.17.7
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/gin-gonic/gin v1.8.1
@@ -29,6 +29,7 @@ require (
 	go.etcd.io/etcd/client/v3 v3.5.6
 	go.uber.org/goleak v1.2.0
 	go.uber.org/zap v1.23.0
+	golang.org/x/sys v0.0.0-20221010170243-090e33056c14
 	google.golang.org/grpc v1.51.0
 	google.golang.org/protobuf v1.28.1
 	gopkg.in/yaml.v3 v3.0.1
@@ -163,7 +164,6 @@ require (
 	golang.org/x/crypto v0.0.0-20221010152910-d6f0a8c073c2 // indirect
 	golang.org/x/net v0.0.0-20221014081412-f15817d10f9b // indirect
 	golang.org/x/sync v0.1.0 // indirect
-	golang.org/x/sys v0.0.0-20221010170243-090e33056c14 // indirect
 	golang.org/x/text v0.4.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20221024183307-1bc688fe9f3e // indirect
