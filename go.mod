@@ -7,7 +7,7 @@ require (
 	github.com/apache/rocketmq-client-go/v2 v2.1.1
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/cloudwego/hertz v0.4.1
-	github.com/containerd/containerd v1.6.12
+	github.com/containerd/containerd v1.6.18
 	github.com/elastic/go-elasticsearch/v7 v7.17.7
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/gin-gonic/gin v1.8.1
@@ -41,7 +41,7 @@ require (
 	github.com/CloudyKit/jet/v3 v3.0.0 // indirect
 	github.com/HdrHistogram/hdrhistogram-go v1.1.2 // indirect
 	github.com/Microsoft/go-winio v0.5.2 // indirect
-	github.com/Microsoft/hcsshim v0.9.5 // indirect
+	github.com/Microsoft/hcsshim v0.9.6 // indirect
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
 	github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 // indirect
 	github.com/ajg/form v1.5.1 // indirect
@@ -55,7 +55,7 @@ require (
 	github.com/bytedance/sonic v1.5.0 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20211019084208-fb5309c8db06 // indirect
 	github.com/cloudwego/netpoll v0.3.1 // indirect
-	github.com/containerd/cgroups v1.0.3 // indirect
+	github.com/containerd/cgroups v1.0.4 // indirect
 	github.com/containerd/continuity v0.3.0 // indirect
 	github.com/containerd/fifo v1.0.0 // indirect
 	github.com/containerd/ttrpc v1.1.0 // indirect
