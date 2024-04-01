@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/azusachino/little-go/learn-project/ants"
+	"github.com/azusachino/golong/learn-project/ants"
 
 	"github.com/caarlos0/env/v6"
 	"time"

@@ -31,7 +31,7 @@ func main() {
 	// Method:   GET
 	// Resource: http://localhost:8080/hello
 	app.Get("/hello", func(ctx iris.Context) {
-		_, _ = ctx.JSON(iris.Map{"message": "Hello Iris!"})
+		// _, _ = ctx.JSON()
 	})
 
 	// http://localhost:8080

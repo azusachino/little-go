@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	pb "github.com/azusachino/little-go/practices/grpc/helloworld/proto"
+	pb "github.com/azusachino/golong/practices/grpc/helloworld/proto"
 	zipkin "github.com/openzipkin/zipkin-go"
 	zipkingrpc "github.com/openzipkin/zipkin-go/middleware/grpc"
 	httpReporter "github.com/openzipkin/zipkin-go/reporter/http"

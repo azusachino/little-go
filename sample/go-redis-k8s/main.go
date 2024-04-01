@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"github.com/azusachino/little-go/sample/go-redis-k8s/model"
+	"github.com/azusachino/golong/sample/go-redis-k8s/model"
 	"github.com/go-redis/redis"
 	"github.com/gorilla/mux"
 	"io"

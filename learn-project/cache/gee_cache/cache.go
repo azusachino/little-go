@@ -1,7 +1,7 @@
 package gee_cache
 
 import (
-	"github.com/azusachino/little-go/learn-project/cache/day_two_single_node/lru"
+	"github.com/azusachino/golong/learn-project/cache/day_two_single_node/lru"
 	"sync"
 )
 

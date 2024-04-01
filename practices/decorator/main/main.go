@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	. "github.com/azusachino/little-go/practices/decorator"
+	. "github.com/azusachino/golong/practices/decorator"
 )
 
 func main() {

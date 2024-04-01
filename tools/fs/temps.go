@@ -1,7 +1,7 @@
 package fs
 
 import (
-	"github.com/azusachino/little-go/tools/hash"
+	"github.com/azusachino/golong/tools/hash"
 	"io/ioutil"
 	"os"
 )

@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/Shopify/sarama"
 	"log"
+
+	"github.com/IBM/sarama"
 )
 
 var config = sarama.NewConfig()

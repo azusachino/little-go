@@ -1,7 +1,7 @@
 package routers
 
 import (
-	v1 "github.com/azusachino/little-go/road-to-go/blog/internal/routers/api"
+	v1 "github.com/azusachino/golong/road-to-go/blog/internal/routers/api"
 	"github.com/gin-gonic/gin"
 )
 

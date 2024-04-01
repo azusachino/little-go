@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	. "github.com/azusachino/little-go/learn-go/function"
+	. "github.com/azusachino/golong/learn-go/function"
 )
 
 func main() {

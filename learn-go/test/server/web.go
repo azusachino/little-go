@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/azusachino/little-go/learn-go/test/server/filelisting"
+	"github.com/azusachino/golong/learn-go/test/server/filelisting"
 	"log"
 	"net/http"
 	_ "net/http/pprof"

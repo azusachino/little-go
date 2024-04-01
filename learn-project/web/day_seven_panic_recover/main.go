@@ -33,7 +33,7 @@ Traceback:
 */
 
 import (
-	"github.com/azusachino/little-go/learn-project/web/day_seven_panic_recover/gee"
+	"github.com/azusachino/golong/learn-project/web/day_seven_panic_recover/gee"
 	"net/http"
 )
 

@@ -2,7 +2,7 @@ package gee_cache
 
 import (
 	"fmt"
-	"github.com/azusachino/little-go/learn-project/cache/gee_cache/hash"
+	"github.com/azusachino/golong/learn-project/cache/gee_cache/hash"
 	"io/ioutil"
 	"log"
 	"net/http"

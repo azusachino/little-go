@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/Shopify/sarama"
 	"os"
 	"os/signal"
 	"sync"
+
+	"github.com/IBM/sarama"
 )
 
 type consumerGroupHandler struct {

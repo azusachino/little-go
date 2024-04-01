@@ -5,7 +5,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/azusachino/little-go/learn-project/ants/internal"
+	"github.com/azusachino/golong/learn-project/ants/internal"
 )
 
 // PoolWithFunc accepts the tasks from client,

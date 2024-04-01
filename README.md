@@ -1,4 +1,4 @@
-# little-go
+# golong
 
 Go 是一个自动垃圾回收的编程语言，采用三色并发标记算法标记对象并回收。
 
@@ -58,8 +58,8 @@ func main() {
 
 ## 学习 golang 的 repo
 
-- 配置 path => C:\Go\bin
-- GoPath => C:\Users\az\Go
+- 配置 GoRoot => C:\Go\bin
+- GoPath => ~\Go
 
 ### 变量类型 条件语句
 

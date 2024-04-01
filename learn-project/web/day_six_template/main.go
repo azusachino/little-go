@@ -35,7 +35,7 @@ p {
 
 import (
 	"fmt"
-	"github.com/azusachino/little-go/learn-project/web/day_six_template/gee"
+	"github.com/azusachino/golong/learn-project/web/day_six_template/gee"
 	"html/template"
 	"net/http"
 	"time"

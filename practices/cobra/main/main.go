@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/azusachino/little-go/practices/cobra/main/cmd"
+	"github.com/azusachino/golong/practices/cobra/main/cmd"
 )
 
 func main() {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/azusachino/little-go/practices/rabbitmq"
+	"github.com/azusachino/golong/practices/rabbitmq"
 	"github.com/streadway/amqp"
 	"log"
 )

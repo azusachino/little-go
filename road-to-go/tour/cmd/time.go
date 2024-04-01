@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/azusachino/little-go/road-to-go/tour/internal/timer"
+	"github.com/azusachino/golong/road-to-go/tour/internal/timer"
 	"github.com/spf13/cobra"
 	"log"
 	"strconv"

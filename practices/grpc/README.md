@@ -5,7 +5,7 @@
 ```protobuf
 syntax = "proto3";
 
-option go_package = "github.com/azusachino/little-go/practices/grpc/helloworld";
+option go_package = "github.com/azusachino/golong/practices/grpc/helloworld";
 option java_multiple_files = true;
 option java_package = "cn.az.code.grpc";
 option java_outer_classname = "HelloWorldProto";

@@ -4,6 +4,7 @@
 # file
 /modules.txt
 vendor/
+golong
 
 ## config
 app.toml

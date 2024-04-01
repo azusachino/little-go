@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/azusachino/little-go/practices/rpc/withTcp"
+	"github.com/azusachino/golong/practices/rpc/withTcp"
 	"log"
 	"net"
 	"net/rpc"
