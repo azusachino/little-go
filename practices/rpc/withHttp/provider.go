@@ -1,7 +1,7 @@
 package withHttp
 
 import (
-	"github.com/azusachino/little-go/practices/rpc/withTcp"
+	"github.com/azusachino/golong/practices/rpc/withTcp"
 	"io"
 	"net/http"
 	"net/rpc"

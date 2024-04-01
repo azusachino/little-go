@@ -1,6 +1,6 @@
 package authService
 
-import "github.com/azusachino/little-go/little-gin/model"
+import "github.com/azusachino/golong/little-gin/model"
 
 type Auth struct {
 	Username string

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/azusachino/little-go/learn-project/orm/day_one"
+	"github.com/azusachino/golong/learn-project/orm/day_one"
 )
 
 func main() {

@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	pb "github.com/azusachino/little-go/practices/grpc/proto/mail"
+	pb "github.com/azusachino/golong/practices/grpc/proto/mail"
 	"google.golang.org/grpc"
 	"log"
 	"testing"

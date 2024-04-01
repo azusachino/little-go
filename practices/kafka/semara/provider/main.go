@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/Shopify/sarama"
 	"log"
 	"os"
 	"os/signal"
 	"sync"
+
+	"github.com/IBM/sarama"
 )
 
 func main() {

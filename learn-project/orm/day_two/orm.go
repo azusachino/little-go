@@ -2,9 +2,9 @@ package day_two
 
 import (
 	"database/sql"
-	"github.com/azusachino/little-go/learn-project/orm/day_two/dialect"
-	"github.com/azusachino/little-go/learn-project/orm/day_two/log"
-	"github.com/azusachino/little-go/learn-project/orm/day_two/session"
+	"github.com/azusachino/golong/learn-project/orm/day_two/dialect"
+	"github.com/azusachino/golong/learn-project/orm/day_two/log"
+	"github.com/azusachino/golong/learn-project/orm/day_two/session"
 )
 
 // Engine is the main struct of geeorm, manages all db sessions and transactions.

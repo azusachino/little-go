@@ -2,8 +2,8 @@ package session
 
 import (
 	"fmt"
-	"github.com/azusachino/little-go/learn-project/orm/day_one/log"
-	"github.com/azusachino/little-go/learn-project/orm/day_two/schema"
+	"github.com/azusachino/golong/learn-project/orm/day_one/log"
+	"github.com/azusachino/golong/learn-project/orm/day_two/schema"
 	"reflect"
 	"strings"
 )

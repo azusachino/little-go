@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/azusachino/little-go/learn-project/web/day_one_http_base/base3/gee"
+	"github.com/azusachino/golong/learn-project/web/day_one_http_base/base3/gee"
 	"net/http"
 )
 

@@ -2,9 +2,9 @@ package session
 
 import (
 	"database/sql"
-	"github.com/azusachino/little-go/learn-project/orm/day_one/log"
-	"github.com/azusachino/little-go/learn-project/orm/day_two/dialect"
-	"github.com/azusachino/little-go/learn-project/orm/day_two/schema"
+	"github.com/azusachino/golong/learn-project/orm/day_one/log"
+	"github.com/azusachino/golong/learn-project/orm/day_two/dialect"
+	"github.com/azusachino/golong/learn-project/orm/day_two/schema"
 	"strings"
 )
 

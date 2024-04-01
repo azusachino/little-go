@@ -13,8 +13,8 @@ info:
   description: An example of gin
   license:
     name: MIT
-    url: https://github.com/azusachino/little-go/blob/master/LICENSE
-  termsOfService: https://github.com/azusachino/little-go
+    url: https://github.com/azusachino/golong/blob/master/LICENSE
+  termsOfService: https://github.com/azusachino/golong
   title: Golang Gin API
   version: "1.0"
 paths:

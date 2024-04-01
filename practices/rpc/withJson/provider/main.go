@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/azusachino/little-go/practices/rpc/withJson"
+	"github.com/azusachino/golong/practices/rpc/withJson"
 	"log"
 	"net"
 	"net/rpc"

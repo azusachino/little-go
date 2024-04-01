@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/Shopify/sarama"
+	"github.com/IBM/sarama"
 )
 
 var localKafka = []string{"127.0.0.1:9093"}

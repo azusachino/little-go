@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/azusachino/little-go/learn-go/object/queue"
+	"github.com/azusachino/golong/learn-go/object/queue"
 )
 
 func main() {
