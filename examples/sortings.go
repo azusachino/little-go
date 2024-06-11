@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-func init() {
+func Sort__() {
 	strings := []string{"c", "b", "a"}
 	sort.Strings(strings)
 	println(strings)

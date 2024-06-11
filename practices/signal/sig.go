@@ -10,7 +10,7 @@ import (
 
 var cmd = exec.Command("ping")
 
-func init() {
+func Init() {
 	cmd.Args = []string{"ping", "baidu.com"}
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
@@ -18,6 +18,7 @@ func init() {
 }
 
 func main() {
+    Init()
 	signalChan := make(chan os.Signal, 1)
 	// 2 & 15
 	signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM)

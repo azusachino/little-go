@@ -7,7 +7,7 @@ import (
 
 var p = fmt.Println
 
-func init() {
+func StringF__() {
 
 	_, _ = p("Contains:  ", strings.Contains("test", "es"))
 	_, _ = p("Count:     ", strings.Count("test", "t"))

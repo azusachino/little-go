@@ -21,7 +21,7 @@ var (
 )
 
 // init all flag values
-func init() {
+func Init() {
 	flag.String("h", ``, "使用助手")
 	flag.StringVar(&url, "url", "http://example.com", "地址")
 	flag.StringVar(&m, "m", "GET", "请求方法")
@@ -33,6 +33,7 @@ func init() {
 }
 
 func main() {
+    Init()
 	// 将所有flag的值绑定到对象上
 	flag.Parse()
 

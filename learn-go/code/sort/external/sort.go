@@ -49,7 +49,7 @@ func writeToFile(p <-chan int, filename string) {
 func createPipeline(filename string, fileSize, chunkCount int) <-chan int {
 	chunkSize := fileSize / chunkCount
 	var sortResults []<-chan int
-	pipeline.Init()
+	pipeline.NODES_()
 	for i := 0; i < chunkCount; i++ {
 		file, err := os.Open(filename)
 		if err != nil {
@@ -64,7 +64,7 @@ func createPipeline(filename string, fileSize, chunkCount int) <-chan int {
 
 func createNetworkPipeline(filename string, fileSize, chunkCount int) <-chan int {
 	chunkSize := fileSize / chunkCount
-	pipeline.Init()
+	pipeline.NODES_()
 
 	var sortAddr []string
 	for i := 0; i < chunkCount; i++ {

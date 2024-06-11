@@ -8,7 +8,7 @@ import (
 // Go’s select lets you wait on multiple channel operations.
 // Combining goroutines and channels with select is a powerful feature of Go.
 
-func init() {
+func Select_() {
 	c1 := make(chan string)
 	c2 := make(chan string)
 

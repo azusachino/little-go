@@ -41,12 +41,11 @@ func (sb *ServerBuilder) Build() Server {
 	return sb.Server
 }
 
-func init() {
+func SB_() {
 	sb := ServerBuilder{}
-	server := sb.Create("127.0.0.1", 8080).
+	_ = sb.Create("127.0.0.1", 8080).
 		WithProtocol("udp").
 		WithMaxConn(1024).
 		WithTimeOut(30).
 		Build()
-	print(server)
 }

@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func init() {
+func RateLimit_() {
 	requests := make(chan int, 5)
 	for i := 1; i <= 5; i++ {
 		requests <- i
@@ -13,10 +13,10 @@ func init() {
 
 	close(requests)
 
-	limiter := time.Tick(200 * time.Millisecond)
+	limiter := time.NewTicker(200 * time.Millisecond)
 
 	for req := range requests {
-		<-limiter
+		<-limiter.C
 		fmt.Println("request", req, time.Now())
 	}
 

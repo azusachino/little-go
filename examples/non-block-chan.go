@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func init() {
+func NonBlocking_() {
 	messages := make(chan string)
 	signals := make(chan bool)
 

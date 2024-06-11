@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func init() {
+func Defer_() {
 	f := createFile("/tmp/defer.txt")
 	defer closeFile(f)
 	writeFile(f)

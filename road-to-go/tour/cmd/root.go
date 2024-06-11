@@ -12,6 +12,6 @@ func Execute() error {
 	return rootCmd.Execute()
 }
 
-func init() {
+func Root_() {
 	rootCmd.AddCommand(wordCmd, timeCmd)
 }

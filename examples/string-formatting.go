@@ -9,7 +9,7 @@ type point struct {
 	x, y int
 }
 
-func init() {
+func StringF_() {
 
 	p := point{1, 2}
 	fmt.Printf("%v\n", p)

@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func init() {
+func Base64() {
 
 	data := "abc123!?$*&()'-=@~"
 

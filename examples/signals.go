@@ -7,7 +7,7 @@ import (
 	"syscall"
 )
 
-func init() {
+func Sig_() {
 
 	sigs := make(chan os.Signal, 1)
 	done := make(chan bool, 1)

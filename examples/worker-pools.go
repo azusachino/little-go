@@ -14,7 +14,7 @@ func worker_(id int, jobs <-chan int, results chan<- int) {
 	}
 }
 
-func init() {
+func WP_() {
 	const numJobs = 5
 	jobs := make(chan int, numJobs)
 	results := make(chan int, numJobs)

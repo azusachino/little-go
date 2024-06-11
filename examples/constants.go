@@ -7,7 +7,7 @@ import (
 
 const s string = "constant"
 
-func init() {
+func Constants() {
 	fmt.Println(s)
 
 	const n = 5_000_000

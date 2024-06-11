@@ -54,7 +54,7 @@ var wordCmd = &cobra.Command{
 	},
 }
 
-func init() {
+func Cmd() {
 	fs := wordCmd.Flags()
 	fs.StringVarP(&str, "str", "s", "", "please input the word")
 	fs.Int8VarP(&mode, "mode", "m", 0, "please select mode")

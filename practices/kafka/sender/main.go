@@ -10,13 +10,14 @@ var config = sarama.NewConfig()
 
 var localKafka = []string{"127.0.0.1:9093"}
 
-func init() {
+func Init() {
 	config.Producer.RequiredAcks = sarama.WaitForAll
 	config.Producer.Partitioner = sarama.NewRandomPartitioner
 	config.Producer.Return.Successes = true
 }
 
 func main() {
+    Init()
 	send()
 }
 

@@ -11,7 +11,7 @@ type Person struct {
 	Name string
 }
 
-func init() {
+func Init() {
 	pool = &sync.Pool{
 		New: func() interface{} {
 			fmt.Println("creating new person")
@@ -34,6 +34,6 @@ func main() {
 	person.Name = "first"
 	pool.Put(person)
 
-	fmt.Println("Get Pool Object：", pool.Get().(*Person))
-	fmt.Println("Get Pool Object：", pool.Get().(*Person))
+	fmt.Println("Get Pool Object: ", pool.Get().(*Person))
+	fmt.Println("Get Pool Object: ", pool.Get().(*Person))
 }

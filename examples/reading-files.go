@@ -18,7 +18,7 @@ func check(e error) {
 // os.Open
 // bufio
 
-func init() {
+func ReadFiles_() {
 
 	dat, err := ioutil.ReadFile("/tmp/dat")
 	check(err)

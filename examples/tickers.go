@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func init() {
+func Tickers_() {
 	ticker := time.NewTicker(500 * time.Millisecond)
 
 	done := make(chan bool)

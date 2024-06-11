@@ -9,7 +9,7 @@ type generator func(values ...interface{}) (string, []interface{})
 
 var generators map[Type]generator
 
-func init() {
+func Init() {
 	generators = make(map[Type]generator)
 	generators[INSERT] = _insert
 	generators[VALUES] = _values

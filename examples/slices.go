@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func init() {
+func Sli_() {
 
 	s := make([]string, 3)
 	fmt.Println("empty", s)
@@ -27,8 +27,6 @@ func init() {
 
 	l := s[2:5]
 	fmt.Println("slice", l)
-
-	l = s[:5]
 
 	t := []string{"g", "h", "i"}
 	fmt.Println("dcl", t)

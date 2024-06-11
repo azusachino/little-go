@@ -49,5 +49,5 @@ label:
 	ants.Release()
 	fmt.Println(ants.Running())
 
-	fmt.Println("Hello Little GO!")
+	fmt.Println("Hello Golong!")
 }

@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-func init() {
+func Tmp_() {
 
 	f, err := ioutil.TempFile("", "sample")
 	check(err)

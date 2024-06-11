@@ -13,7 +13,7 @@ func worker(done chan bool) {
 	done <- true
 }
 
-func init() {
+func ChannelSynchronization() {
 	done := make(chan bool, 1)
 	go worker(done)
 

@@ -6,7 +6,7 @@ import (
 	"regexp"
 )
 
-func init() {
+func Regular_() {
 
 	match, _ := regexp.MatchString("p([a-z]+)ch", "peach")
 	fmt.Println(match)

@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func init() {
+func Arrays() {
 	var a [5]int
 	fmt.Println(a)
 

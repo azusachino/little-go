@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func init() {
+func CLI_s() {
 
 	fooCmd := flag.NewFlagSet("foo", flag.ExitOnError)
 	fooEnable := fooCmd.Bool("enable", false, "enable")

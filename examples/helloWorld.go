@@ -1,7 +1,10 @@
 package examples
 
-import "fmt"
+import (
+	"sync"
+)
 
-func init() {
-	fmt.Println("Hello world")
+type Counter struct {
+	sync.Mutex
+	Count uint64
 }

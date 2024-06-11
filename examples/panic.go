@@ -2,7 +2,7 @@ package examples
 
 import "os"
 
-func init() {
+func Panic_() {
 
 	_, err := os.Create("/tmp/file")
 	if err != nil {

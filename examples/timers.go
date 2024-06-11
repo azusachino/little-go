@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func init() {
+func Timers_() {
 	timer1 := time.NewTimer(2 * time.Second)
 
 	<-timer1.C

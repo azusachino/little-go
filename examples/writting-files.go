@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func init() {
+func WF_() {
 
 	d1 := []byte("hello\ngo\n")
 	err := ioutil.WriteFile("/tmp/dat1", d1, 0644)

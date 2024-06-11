@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func init() {
+func MemberParsing_() {
 
 	f, _ := strconv.ParseFloat("1.234", 64)
 	fmt.Println(f)

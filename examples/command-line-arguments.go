@@ -9,7 +9,7 @@ import (
 // [./command-line-arguments a b c d]
 // [a b c d]
 // c
-func init() {
+func CLIs() {
 
 	argsWithProg := os.Args
 	argsWithoutProg := os.Args[1:]

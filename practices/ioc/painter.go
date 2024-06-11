@@ -35,7 +35,7 @@ func NewButton(x int, y int, label string) Button {
 	return Button{Label{Widget{x, y}, label}}
 }
 
-func init() {
+func Init() {
 	label := Label{}
 	button1 := Button{Label{Widget{10, 70}, "OK"}}
 	button2 := NewButton(50, 70, "Cancel")

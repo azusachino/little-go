@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func init() {
+func Mutexs___() {
 
 	var state = make(map[int]int)
 	var mutex = &sync.Mutex{}

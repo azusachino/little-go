@@ -12,7 +12,7 @@ import (
 var sugarLogger *zap.SugaredLogger
 var file os.File
 
-func init() {
+func Init() {
 	encoder := getEncoder()
 	defaultWriter := getLogWriter("E:\\Projects\\project-github\\little-go\\practices\\log\\logs")
 	core := zapcore.NewCore(
@@ -26,6 +26,7 @@ func init() {
 }
 
 func main() {
+    Init()
 	defer sugarLogger.Sync()
 	defer file.Close()
 	url := "https://azusachino.cn"

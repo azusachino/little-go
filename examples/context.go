@@ -25,7 +25,7 @@ func _hello(w http.ResponseWriter, req *http.Request) {
 	}
 }
 
-func init() {
+func Contexts() {
 
 	http.HandleFunc("/hello", _hello)
 	_ = http.ListenAndServe(":8090", nil)

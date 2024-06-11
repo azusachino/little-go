@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func init() {
+func Exit_() {
 
 	// Note that the ! from our program never got printed.
 	defer fmt.Println("!")

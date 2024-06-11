@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func init() {
+func Range_Chan() {
 
 	nums := []int{2, 3, 4}
 	sum := 0

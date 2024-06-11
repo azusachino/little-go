@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func init() {
+func Var_() {
 	var a = "initial"
 	fmt.Println(a)
 

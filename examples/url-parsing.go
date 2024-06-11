@@ -6,7 +6,7 @@ import (
 	"net/url"
 )
 
-func init() {
+func Url_() {
 
 	// [scheme:][//[userinfo@]host][/]path[?query][#fragment]
 	s := "postgres://user:pass@host.com:5432/path?k=v#f"

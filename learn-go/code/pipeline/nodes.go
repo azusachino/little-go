@@ -11,7 +11,7 @@ import (
 
 var startTime time.Time
 
-func Init() {
+func NODES_() {
 	startTime = time.Now()
 }
 

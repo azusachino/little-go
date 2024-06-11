@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func init() {
+func Sha1_() {
 	s := "sha1 this string"
 
 	h := sha1.New()

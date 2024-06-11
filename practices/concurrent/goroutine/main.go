@@ -9,8 +9,8 @@ import (
 func main() {
 	//demo()
 	//timeAfter()
-	//timeAfterFor()
-	timeAfterForFixed()
+	timeAfterFor()
+	// timeAfterForFixed()
 }
 
 // normal case (no loop)
@@ -31,19 +31,24 @@ func timeAfter() {
 // memory up
 func timeAfterFor() {
 	ch := make(chan int, 10)
-	go func() {
-		in := 1
-		for {
-			in++
-			ch <- in
-		}
-	}()
+	for i := 0; i < 10; i++ {
+		go func() {
+			in := 1
+			for {
+				in++
+				ch <- in
+			}
+		}()
+	}
 
 	for {
 		select {
-		case _ = <-ch:
+		case aaa := <-ch:
+			fmt.Println(aaa)
 		case <-time.After(3 * time.Second):
 			fmt.Printf("now is: %d, do something!!!", time.Now().Unix())
+		case <-time.After(100 * time.Second):
+			return
 		}
 	}
 }
@@ -63,15 +68,15 @@ func timeAfterForFixed() {
 
 	for {
 		select {
-		case _ = <-ch:
+		case <-ch:
 		case <-timer.C:
 			fmt.Printf("now is %d, do something!!!", time.Now().Unix())
 		}
 	}
 }
 
-//在 Go1.14 前，不会输出任何结果。
-//在 Go1.14 及之后，能够正常输出结果。
+// 在 Go1.14 前，不会输出任何结果。
+// 在 Go1.14 及之后，能够正常输出结果。
 func demo() {
 	// set to 1 process
 	runtime.GOMAXPROCS(1)

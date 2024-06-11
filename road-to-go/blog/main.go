@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func init() {
+func Init() {
 	err := setupSetting()
 	if err != nil {
 		log.Fatalf("init.setupSetting failed: %v", err)

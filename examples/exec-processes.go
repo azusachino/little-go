@@ -6,7 +6,7 @@ import (
 	"syscall"
 )
 
-func init() {
+func Exec_() {
 
 	binary, lookErr := exec.LookPath("ls")
 	if lookErr != nil {

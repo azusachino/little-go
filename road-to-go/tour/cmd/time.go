@@ -57,7 +57,7 @@ var calcTimeCmd = &cobra.Command{
 	},
 }
 
-func init() {
+func Time() {
 	timeCmd.AddCommand(nowTimeCmd, calcTimeCmd)
 	fs := calcTimeCmd.Flags()
 	fs.StringVarP(&calculateTime, "calculate", "c", "", `calculate time duration`)

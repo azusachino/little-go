@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func init() {
+func LineFilter_() {
 
 	scanner := bufio.NewScanner(os.Stdin)
 

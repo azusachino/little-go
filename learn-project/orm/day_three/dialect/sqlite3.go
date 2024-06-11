@@ -15,7 +15,7 @@ func (s *sqlite3) TableExistSql(tableName string) (string, []interface{}) {
 
 var _ Dialect = (*sqlite3)(nil)
 
-func init() {
+func Init() {
 	RegisterDialect("sqlite3", &sqlite3{})
 }
 

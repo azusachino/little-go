@@ -11,7 +11,7 @@ func f(from string) {
 	}
 }
 
-func init() {
+func Go__() {
 	f("direct")
 
 	go f("goroutine")

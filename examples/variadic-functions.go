@@ -11,7 +11,7 @@ func sum(nums ...int) {
 	fmt.Println(total)
 }
 
-func init() {
+func Vard_() {
 	sum(1, 2)
 	sum(1, 2, 3)
 

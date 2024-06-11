@@ -2,7 +2,7 @@ package examples
 
 import "fmt"
 
-func init() {
+func Channels() {
 
 	// 普通的channel
 	messages := make(chan string)
