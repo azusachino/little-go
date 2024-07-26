@@ -1,6 +1,7 @@
 package examples
 
 import (
+	"fmt"
 	"math/rand"
 	"sync"
 	"testing"
@@ -16,7 +17,7 @@ func TestCounter(t *testing.T) {
 		c.Lock()
 		defer c.Unlock()
 	}
-	t.Log("example finished")
+	fmt.Printf("finished %d", c.Count)
 }
 
 func TestTryMutex(t *testing.T) {
@@ -36,4 +37,17 @@ func TestTryMutex(t *testing.T) {
 		return
 	}
 	t.Log("cannot get the lock")
+}
+
+func TestCount(t *testing.T) {
+	var mu Mutex
+	for i := 0; i < 1000; i++ {
+		go func() {
+			mu.Lock()
+			time.Sleep(time.Second)
+			mu.Unlock()
+		}()
+	}
+	time.Sleep(time.Second)
+	fmt.Printf("%d, %t, %t, %t\n", mu.Count(), mu.IsLocked(), mu.IsWoken(), mu.IsStarving())
 }

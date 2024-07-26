@@ -133,7 +133,8 @@ func (dv DefaultValidator) Validate(val interface{}) (bool, error) {
 
 ## go test
 
-`go test -v -run TestSquare`
+- `go test -v -run TestSquare` (-v to output the stdio)
+- or set the settings of vscode `"go.testFlags": ["-v"]`
 
 ## Useful Libraries
 
