@@ -3,10 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
+
 	"github.com/azusachino/golong/learn-project/ants"
 
-	"github.com/caarlos0/env/v6"
+	"net/http"
+	_ "net/http/pprof" // Import pprof for profiling
 	"time"
+
+	"github.com/caarlos0/env/v6"
 )
 
 type config struct {
@@ -48,6 +52,13 @@ label:
 	fmt.Println(ants.Running())
 	ants.Release()
 	fmt.Println(ants.Running())
+
+	// Start HTTP server for pprof
+	go func() {
+		if err := http.ListenAndServe("localhost:6060", nil); err != nil {
+			fmt.Printf("Failed to start pprof server: %v\n", err)
+		}
+	}()
 
 	fmt.Println("Hello Golong!")
 }

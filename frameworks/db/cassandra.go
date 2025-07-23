@@ -1,4 +1,4 @@
-package frameworks
+package the_db
 
 import "github.com/gocql/gocql"
 
