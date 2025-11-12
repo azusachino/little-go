@@ -41,7 +41,7 @@ func main() {
 
 `io.Read#Read(p []byte) (n int, err error)`, `iouitl.ReadAll`
 
-使用`Stringable`接口把"业务类型" `Country`  和  `City`  和"控制逻辑" `Print()`  给解耦了. 于是, 只要实现了`Stringable`  接口, 都可以传给  `PrintStr()`
+使用`Stringable`接口把"业务类型" `Country` 和 `City` 和"控制逻辑" `Print()` 给解耦了. 于是, 只要实现了`Stringable` 接口, 都可以传给 `PrintStr()`
 来使用.
 
 ```go
@@ -105,7 +105,7 @@ var _ Shape = (*Square)(nil)
 - 在命令行上，flag 通过 time.ParseDuration 支持了 time.Duration
 - Json 中的 encoding/json 中也可以把 time.Time 编码成 RFC 3339 的格式
 - 数据库使用的 database/sql 也支持把 DATATIME 或 TIMESTAMP 类型转成 time.Time
-- YAML 你可以使用  [gopkg.in/yaml.v2](http://gopkg.in/yaml.v2)  也支持 time.Time 、time.Duration 和 RFC 3339 格式
+- YAML 你可以使用 [gopkg.in/yaml.v2](http://gopkg.in/yaml.v2) 也支持 time.Time 、time.Duration 和 RFC 3339 格式
 
 ### 性能提示
 
@@ -158,10 +158,10 @@ Go 语言的函数支持多返回值，所以，可以在返回接口把业务�
 
 ### 资源清理
 
-- C 语言 – 使用的是  `goto fail;`  的方式到一个集中的地方进行清理
+- C 语言 – 使用的是 `goto fail;` 的方式到一个集中的地方进行清理
 - C++语言- 一般来说使用 RAII 模式，通过面向对象的代理模式，把需要清理的资源交给一个代理类，然后在析构函数来解决。
-- Java 语言 – 可以在  `finally`  语句块里进行清理。
-- Go 语言 – 使用  `defer`  关键词进行清理。
+- Java 语言 – 可以在 `finally` 语句块里进行清理。
+- Go 语言 – 使用 `defer` 关键词进行清理。
 
 ```go
 func Close(c io.Closer) {

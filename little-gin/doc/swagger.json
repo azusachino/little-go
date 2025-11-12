@@ -14,9 +14,7 @@
   "paths": {
     "/api/v1/articles": {
       "get": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Get multiple articles",
         "parameters": [
           {
@@ -60,9 +58,7 @@
         }
       },
       "post": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Add article",
         "parameters": [
           {
@@ -138,9 +134,7 @@
     },
     "/api/v1/articles/{id}": {
       "get": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Get a single article",
         "parameters": [
           {
@@ -167,9 +161,7 @@
         }
       },
       "put": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Update article",
         "parameters": [
           {
@@ -245,9 +237,7 @@
         }
       },
       "delete": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Delete article",
         "parameters": [
           {
@@ -276,9 +266,7 @@
     },
     "/api/v1/tags": {
       "get": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Get multiple article tags",
         "parameters": [
           {
@@ -310,9 +298,7 @@
         }
       },
       "post": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Add article tag",
         "parameters": [
           {
@@ -359,9 +345,7 @@
     },
     "/api/v1/tags/export": {
       "post": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Export article tag",
         "parameters": [
           {
@@ -399,9 +383,7 @@
     },
     "/api/v1/tags/import": {
       "post": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Import Image",
         "parameters": [
           {
@@ -430,9 +412,7 @@
     },
     "/api/v1/tags/{id}": {
       "put": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Update article tag",
         "parameters": [
           {
@@ -485,9 +465,7 @@
         }
       },
       "delete": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Delete article tag",
         "parameters": [
           {
@@ -516,9 +494,7 @@
     },
     "/auth": {
       "get": {
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "summary": "Get Auth",
         "parameters": [
           {

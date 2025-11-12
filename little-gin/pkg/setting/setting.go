@@ -74,7 +74,7 @@ func Setup() {
 	parse(RedisSetting)
 }
 
-func parse(setting interface{}) {
+func parse(setting any) {
 	err := viper.Unmarshal(setting)
 
 	if err != nil {

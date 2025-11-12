@@ -1,6 +1,3 @@
-[tools]
-go = "1.24"
-
 [tasks.tidy]
 description = "Run go mod tidy"
 run = """

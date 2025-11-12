@@ -18,7 +18,7 @@
 
 ```go
 package test
-import ("fmt" 
+import ("fmt"
         "math")
 func triangle() {
 	var a, b  = 3, 4
@@ -36,7 +36,7 @@ const数值可以作为各种类型使用
 package main
 import "fmt"
 func consts() {
-    const filename = "abc.txt" // 首字母大写 
+    const filename = "abc.txt" // 首字母大写
     const a, b = 3, 4
     fmt.Println(filename ,a + b)
 }
