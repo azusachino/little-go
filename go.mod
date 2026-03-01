@@ -1,6 +1,7 @@
 module github.com/azusachino/golong
 
-go 1.22
+go 1.23.0
+
 toolchain go1.24.1
 
 require (
@@ -8,7 +9,7 @@ require (
 	github.com/apache/rocketmq-client-go/v2 v2.1.2
 	github.com/caarlos0/env/v6 v6.10.1
 	github.com/cloudwego/hertz v0.8.1
-	github.com/containerd/containerd v1.7.27
+	github.com/containerd/containerd v1.7.29
 	github.com/elastic/go-elasticsearch/v7 v7.17.10
 	github.com/fsnotify/fsnotify v1.7.0
 	github.com/gin-gonic/gin v1.9.1
@@ -30,7 +31,7 @@ require (
 	go.etcd.io/etcd/client/v3 v3.5.13
 	go.uber.org/goleak v1.3.0
 	go.uber.org/zap v1.27.0
-	golang.org/x/sys v0.30.0
+	golang.org/x/sys v0.34.0
 	google.golang.org/grpc v1.62.1
 	google.golang.org/protobuf v1.35.2
 	gopkg.in/yaml.v3 v3.0.1
@@ -182,12 +183,12 @@ require (
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
-	golang.org/x/crypto v0.35.0 // indirect
+	golang.org/x/crypto v0.40.0 // indirect
 	golang.org/x/exp v0.0.0-20240112132812-db7319d0e0e3 // indirect
-	golang.org/x/net v0.36.0 // indirect
-	golang.org/x/sync v0.11.0 // indirect
-	golang.org/x/text v0.22.0 // indirect
-	golang.org/x/time v0.5.0 // indirect
+	golang.org/x/net v0.42.0 // indirect
+	golang.org/x/sync v0.16.0 // indirect
+	golang.org/x/text v0.27.0 // indirect
+	golang.org/x/time v0.12.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto v0.0.0-20240123012728-ef4313101c80 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240123012728-ef4313101c80 // indirect
